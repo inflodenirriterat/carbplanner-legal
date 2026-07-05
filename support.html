@@ -11,21 +11,32 @@
   h1{font-size:26px;margin-bottom:4px;}
   .updated{color:#6b6478;font-size:14px;margin-bottom:32px;}
   h2{font-size:19px;margin-top:36px;margin-bottom:8px;}
+  h3{font-size:16px;margin-top:24px;margin-bottom:4px;}
   p,li{font-size:15px;}
   ul{padding-left:20px;}
   a{color:#4A3B7A;}
   .card{background:#fff;border-radius:14px;padding:20px 22px;margin-top:24px;}
   .contact{font-size:17px;}
   footer{margin-top:48px;font-size:13px;color:#8A7E72;text-align:center;}
+  .langbar{display:flex;justify-content:flex-end;margin-bottom:8px;}
+  .langbar select{font:inherit;font-size:14px;color:inherit;background:#fff;border:1px solid #d9d3e6;
+    border-radius:8px;padding:5px 8px;}
+  [data-lang]{display:none;}
+  [data-lang].active{display:block;}
   @media (prefers-color-scheme: dark){
     body{background:#151020;color:#EDE8F5;}
     .card{background:#211A33;}
     .updated,footer{color:#9d94b5;}
     a{color:#B7A6F0;}
+    .langbar select{background:#211A33;border-color:#3a3150;}
   }
 </style>
 </head>
 <body>
+  <div class="langbar"><select id="langsel" aria-label="Language / Språk"></select></div>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <div data-lang="en" data-title="Support — CarbPlanner">
   <h1>CarbPlanner Support</h1>
   <p class="updated">We're happy to help.</p>
 
@@ -44,10 +55,20 @@
   more room around themselves. If you import a route (GPX), it also shifts feeds onto flatter ground
   and gets energy in before climbs, timed to how fast each product type is absorbed.</p>
 
+  <h3>Is my data backed up?</h3>
+  <p>If you're signed in to iCloud, CarbPlanner automatically saves a backup of your plans, products
+  and history to your own private iCloud whenever they change. You can see the last backup time, and
+  back up manually, under Profile → Data &amp; Backup. The backup lives in your Apple account only —
+  we can't see it. If iCloud is off, your data still works locally; it just isn't backed up until you
+  turn iCloud on or export a file yourself.</p>
+
   <h3>My data disappeared / I got a new phone</h3>
-  <p>Your plans and history are stored on the device itself, not in the cloud. Deleting the app or
-  switching phones without a device transfer will remove them. Use iOS's standard device-to-device
-  or iCloud backup transfer to move everything to a new phone.</p>
+  <p>Your plans and history are stored on the device, and — if you're signed in to iCloud — also
+  backed up to your private iCloud. To move to a new phone, sign in with the same Apple ID and
+  install CarbPlanner: when you open it on a fresh install, it offers to restore your latest backup.
+  If nothing is offered, check that iCloud Drive is turned on for CarbPlanner (Settings → [your name]
+  → iCloud → Apps Using iCloud) and that you're using the same Apple ID. You can also export a backup
+  file from Profile → Data &amp; Backup and import it on the new device.</p>
 
   <h3>How do I manage or cancel my subscription?</h3>
   <p>Subscriptions are handled by Apple. Open <strong>Settings → [your name] → Subscriptions</strong>
@@ -66,5 +87,333 @@
   <footer>
     CarbPlanner · <a href="./privacy.html">Privacy Policy</a> · <a href="./terms.html">Terms of Service</a>
   </footer>
+  </div>
+
+  <!-- ===================== SVENSKA ===================== -->
+  <div data-lang="sv" data-title="Support — CarbPlanner">
+  <h1>CarbPlanner Support</h1>
+  <p class="updated">Vi hjälper dig gärna.</p>
+
+  <div class="card">
+    <p class="contact">📧 Mejla oss på
+    <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a></p>
+    <p>Vi strävar efter att svara inom några arbetsdagar. Ange gärna din iOS-version och en kort
+    beskrivning av vad som hände — en skärmbild hjälper mycket.</p>
+  </div>
+
+  <h2>Vanliga frågor</h2>
+
+  <h3>Hur avgör CarbPlanner när man ska äta?</h3>
+  <p>Du sätter ett mål för kolhydrater per timme och lägger till dina produkter (geler, bars,
+  tuggisar, drycker). Appen sprider ut dina intag så att intaget hålls jämnt över tid — större
+  produkter räcker längre och reserverar mer utrymme runt sig. Om du importerar en rutt (GPX) flyttar
+  den även intag till plattare mark och får in energi före stigningar, tajmat efter hur snabbt varje
+  produkttyp tas upp.</p>
+
+  <h3>Säkerhetskopieras mina uppgifter?</h3>
+  <p>Om du är inloggad på iCloud sparar CarbPlanner automatiskt en säkerhetskopia av dina planer,
+  produkter och din historik till ditt eget privata iCloud varje gång de ändras. Du kan se när den
+  senaste säkerhetskopian gjordes, och säkerhetskopiera manuellt, under Profil → Data &amp;
+  säkerhetskopiering. Säkerhetskopian ligger bara i ditt Apple-konto — vi kan inte se den. Om iCloud
+  är avstängt fungerar dina uppgifter fortfarande lokalt; de säkerhetskopieras bara inte förrän du
+  slår på iCloud eller själv exporterar en fil.</p>
+
+  <h3>Mina uppgifter försvann / jag har fått en ny telefon</h3>
+  <p>Dina planer och din historik lagras på enheten och — om du är inloggad på iCloud — säkerhetskopieras
+  även till ditt privata iCloud. För att flytta till en ny telefon: logga in med samma Apple-ID och
+  installera CarbPlanner. När du öppnar den på en nyinstallation erbjuder den att återställa din
+  senaste säkerhetskopia. Om inget erbjuds, kontrollera att iCloud Drive är påslaget för CarbPlanner
+  (Inställningar → [ditt namn] → iCloud → Appar som använder iCloud) och att du använder samma
+  Apple-ID. Du kan också exportera en säkerhetskopiefil under Profil → Data &amp; säkerhetskopiering
+  och importera den på den nya enheten.</p>
+
+  <h3>Hur hanterar eller avslutar jag min prenumeration?</h3>
+  <p>Prenumerationer hanteras av Apple. Öppna <strong>Inställningar → [ditt namn] → Prenumerationer</strong>
+  på din enhet för att ändra plan, avsluta eller se ditt förnyelsedatum. I appen kan du använda
+  "Återställ köp" på betalväggen om ett köp inte visas.</p>
+
+  <h3>Är min energiplan medicinsk rådgivning?</h3>
+  <p>Nej. CarbPlanner är ett planeringsverktyg, inte medicinsk eller dietrådgivning. Rådgör med en
+  läkare eller legitimerad dietist innan du ändrar din intagsstrategi, särskilt om du har något
+  hälsotillstånd. Se våra <a href="./terms.html">användarvillkor</a> för detaljer.</p>
+
+  <h3>Produktsökningen hittar inte min vara</h3>
+  <p>Sökresultaten kommer från den offentliga databasen Open Food Facts och kräver en
+  internetanslutning. Om en produkt inte finns med kan du lägga till den manuellt med dina egna
+  siffror för kolhydrater och natrium.</p>
+
+  <footer>
+    CarbPlanner · <a href="./privacy.html">Integritetspolicy</a> · <a href="./terms.html">Användarvillkor</a>
+  </footer>
+  </div>
+
+  <!-- ===================== ESPAÑOL ===================== -->
+  <div data-lang="es" data-title="Soporte — CarbPlanner">
+  <h1>Soporte de CarbPlanner</h1>
+  <p class="updated">Estaremos encantados de ayudarte.</p>
+
+  <div class="card">
+    <p class="contact">📧 Escríbenos a
+    <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a></p>
+    <p>Intentamos responder en unos pocos días laborables. Incluye tu versión de iOS y una breve
+    descripción de lo ocurrido — una captura de pantalla ayuda mucho.</p>
+  </div>
+
+  <h2>Preguntas frecuentes</h2>
+
+  <h3>¿Cómo decide CarbPlanner cuándo comer?</h3>
+  <p>Estableces un objetivo de carbohidratos por hora y añades tus productos (geles, barritas,
+  gominolas, bebidas). La app espacia tus tomas para que la ingesta se mantenga uniforme en el tiempo
+  — los productos más grandes duran más y reservan más espacio a su alrededor. Si importas una ruta
+  (GPX), también desplaza las tomas hacia terreno más llano y mete energía antes de las subidas,
+  ajustada a la rapidez con que se absorbe cada tipo de producto.</p>
+
+  <h3>¿Se hace copia de seguridad de mis datos?</h3>
+  <p>Si has iniciado sesión en iCloud, CarbPlanner guarda automáticamente una copia de seguridad de
+  tus planes, productos e historial en tu propio iCloud privado cada vez que cambian. Puedes ver la
+  hora de la última copia, y hacer una copia manualmente, en Perfil → Datos y copia de seguridad. La
+  copia reside solo en tu cuenta de Apple — nosotros no podemos verla. Si iCloud está desactivado, tus
+  datos siguen funcionando localmente; simplemente no se copian hasta que actives iCloud o exportes un
+  archivo tú mismo.</p>
+
+  <h3>Mis datos desaparecieron / tengo un teléfono nuevo</h3>
+  <p>Tus planes e historial se almacenan en el dispositivo y —si has iniciado sesión en iCloud— también
+  se respaldan en tu iCloud privado. Para pasar a un teléfono nuevo, inicia sesión con el mismo ID de
+  Apple e instala CarbPlanner: al abrirlo en una instalación nueva, te ofrecerá restaurar tu última
+  copia de seguridad. Si no se ofrece nada, comprueba que iCloud Drive esté activado para CarbPlanner
+  (Ajustes → [tu nombre] → iCloud → Apps que usan iCloud) y que usas el mismo ID de Apple. También
+  puedes exportar un archivo de copia de seguridad en Perfil → Datos y copia de seguridad e importarlo
+  en el nuevo dispositivo.</p>
+
+  <h3>¿Cómo gestiono o cancelo mi suscripción?</h3>
+  <p>Las suscripciones las gestiona Apple. Abre <strong>Ajustes → [tu nombre] → Suscripciones</strong>
+  en tu dispositivo para cambiar de plan, cancelar o ver tu fecha de renovación. En la app, usa
+  "Restaurar compras" en el muro de pago si una compra no aparece.</p>
+
+  <h3>¿Mi plan de nutrición es un consejo médico?</h3>
+  <p>No. CarbPlanner es una herramienta de planificación, no un consejo médico ni dietético. Consulta
+  a un médico o a un dietista-nutricionista titulado antes de cambiar tu estrategia de nutrición,
+  especialmente si tienes alguna condición de salud. Consulta nuestros
+  <a href="./terms.html">Términos del servicio</a> para más detalles.</p>
+
+  <h3>La búsqueda de productos no encuentra mi artículo</h3>
+  <p>Los resultados provienen de la base de datos pública Open Food Facts y necesitan conexión a
+  internet. Si un producto no está listado, puedes añadirlo manualmente con tus propios números de
+  carbohidratos y sodio.</p>
+
+  <footer>
+    CarbPlanner · <a href="./privacy.html">Política de privacidad</a> · <a href="./terms.html">Términos del servicio</a>
+  </footer>
+  </div>
+
+  <!-- ===================== FRANÇAIS ===================== -->
+  <div data-lang="fr" data-title="Assistance — CarbPlanner">
+  <h1>Assistance CarbPlanner</h1>
+  <p class="updated">Nous sommes ravis de vous aider.</p>
+
+  <div class="card">
+    <p class="contact">📧 Écrivez-nous à
+    <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a></p>
+    <p>Nous nous efforçons de répondre sous quelques jours ouvrés. Merci d'indiquer votre version
+    d'iOS et une brève description de ce qui s'est passé — une capture d'écran aide beaucoup.</p>
+  </div>
+
+  <h2>Questions fréquentes</h2>
+
+  <h3>Comment CarbPlanner décide-t-il quand manger ?</h3>
+  <p>Vous définissez un objectif de glucides par heure et ajoutez vos produits (gels, barres, pâtes de
+  fruits, boissons). L'app espace vos prises pour que l'apport reste régulier dans le temps — les
+  produits plus gros durent plus longtemps et réservent plus d'espace autour d'eux. Si vous importez
+  un parcours (GPX), elle décale aussi les prises vers un terrain plus plat et fait passer l'énergie
+  avant les montées, en fonction de la vitesse d'absorption de chaque type de produit.</p>
+
+  <h3>Mes données sont-elles sauvegardées ?</h3>
+  <p>Si vous êtes connecté à iCloud, CarbPlanner enregistre automatiquement une sauvegarde de vos
+  plans, produits et historique dans votre propre iCloud privé à chaque modification. Vous pouvez voir
+  l'heure de la dernière sauvegarde, et sauvegarder manuellement, dans Profil → Données et sauvegarde.
+  La sauvegarde réside uniquement dans votre compte Apple — nous ne pouvons pas la voir. Si iCloud est
+  désactivé, vos données fonctionnent toujours localement ; elles ne sont simplement pas sauvegardées
+  tant que vous n'activez pas iCloud ou n'exportez pas un fichier vous-même.</p>
+
+  <h3>Mes données ont disparu / j'ai un nouveau téléphone</h3>
+  <p>Vos plans et votre historique sont stockés sur l'appareil et — si vous êtes connecté à iCloud —
+  aussi sauvegardés dans votre iCloud privé. Pour passer à un nouveau téléphone, connectez-vous avec
+  le même identifiant Apple et installez CarbPlanner : à l'ouverture sur une nouvelle installation,
+  l'app propose de restaurer votre dernière sauvegarde. Si rien n'est proposé, vérifiez qu'iCloud
+  Drive est activé pour CarbPlanner (Réglages → [votre nom] → iCloud → Apps utilisant iCloud) et que
+  vous utilisez le même identifiant Apple. Vous pouvez aussi exporter un fichier de sauvegarde dans
+  Profil → Données et sauvegarde et l'importer sur le nouvel appareil.</p>
+
+  <h3>Comment gérer ou annuler mon abonnement ?</h3>
+  <p>Les abonnements sont gérés par Apple. Ouvrez <strong>Réglages → [votre nom] → Abonnements</strong>
+  sur votre appareil pour changer de formule, annuler ou voir votre date de renouvellement. Dans
+  l'app, utilisez « Restaurer les achats » sur l'écran d'abonnement si un achat n'apparaît pas.</p>
+
+  <h3>Mon plan de nutrition est-il un avis médical ?</h3>
+  <p>Non. CarbPlanner est un outil de planification, pas un avis médical ou diététique. Consultez un
+  médecin ou un diététicien diplômé avant de modifier votre stratégie de nutrition, surtout si vous
+  avez un problème de santé. Consultez nos <a href="./terms.html">Conditions d'utilisation</a> pour
+  plus de détails.</p>
+
+  <h3>La recherche de produits ne trouve pas mon article</h3>
+  <p>Les résultats proviennent de la base de données publique Open Food Facts et nécessitent une
+  connexion internet. Si un produit n'est pas répertorié, vous pouvez l'ajouter manuellement avec vos
+  propres valeurs de glucides et de sodium.</p>
+
+  <footer>
+    CarbPlanner · <a href="./privacy.html">Politique de confidentialité</a> · <a href="./terms.html">Conditions d'utilisation</a>
+  </footer>
+  </div>
+
+  <!-- ===================== ITALIANO ===================== -->
+  <div data-lang="it" data-title="Assistenza — CarbPlanner">
+  <h1>Assistenza CarbPlanner</h1>
+  <p class="updated">Siamo felici di aiutarti.</p>
+
+  <div class="card">
+    <p class="contact">📧 Scrivici a
+    <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a></p>
+    <p>Cerchiamo di rispondere entro pochi giorni lavorativi. Includi la tua versione di iOS e una
+    breve descrizione di cosa è successo — uno screenshot aiuta molto.</p>
+  </div>
+
+  <h2>Domande frequenti</h2>
+
+  <h3>Come decide CarbPlanner quando mangiare?</h3>
+  <p>Imposti un obiettivo di carboidrati all'ora e aggiungi i tuoi prodotti (gel, barrette, caramelle,
+  bevande). L'app distanzia le assunzioni in modo che l'apporto resti costante nel tempo — i prodotti
+  più grandi durano di più e riservano più spazio attorno a sé. Se importi un percorso (GPX), sposta
+  anche le assunzioni su terreno più pianeggiante e fa arrivare energia prima delle salite, in base
+  alla velocità di assorbimento di ogni tipo di prodotto.</p>
+
+  <h3>I miei dati vengono salvati con un backup?</h3>
+  <p>Se hai eseguito l'accesso a iCloud, CarbPlanner salva automaticamente un backup dei tuoi piani,
+  prodotti e cronologia nel tuo iCloud privato ogni volta che cambiano. Puoi vedere l'ora dell'ultimo
+  backup, ed eseguire un backup manuale, in Profilo → Dati e backup. Il backup risiede solo nel tuo
+  account Apple — noi non possiamo vederlo. Se iCloud è disattivato, i tuoi dati funzionano comunque
+  localmente; semplicemente non vengono salvati finché non attivi iCloud o esporti un file da solo.</p>
+
+  <h3>I miei dati sono spariti / ho un nuovo telefono</h3>
+  <p>I tuoi piani e la tua cronologia sono memorizzati sul dispositivo e — se hai eseguito l'accesso a
+  iCloud — anche salvati nel tuo iCloud privato. Per passare a un nuovo telefono, accedi con lo stesso
+  ID Apple e installa CarbPlanner: quando lo apri su un'installazione nuova, ti propone di ripristinare
+  l'ultimo backup. Se non viene proposto nulla, verifica che iCloud Drive sia attivo per CarbPlanner
+  (Impostazioni → [il tuo nome] → iCloud → App che usano iCloud) e che tu stia usando lo stesso ID
+  Apple. Puoi anche esportare un file di backup in Profilo → Dati e backup e importarlo sul nuovo
+  dispositivo.</p>
+
+  <h3>Come gestisco o annullo il mio abbonamento?</h3>
+  <p>Gli abbonamenti sono gestiti da Apple. Apri <strong>Impostazioni → [il tuo nome] →
+  Abbonamenti</strong> sul dispositivo per cambiare piano, annullare o vedere la data di rinnovo.
+  Nell'app, usa "Ripristina acquisti" nella schermata di abbonamento se un acquisto non compare.</p>
+
+  <h3>Il mio piano di alimentazione è un consiglio medico?</h3>
+  <p>No. CarbPlanner è uno strumento di pianificazione, non un consiglio medico o dietetico. Consulta
+  un medico o un dietista abilitato prima di modificare la tua strategia di alimentazione, soprattutto
+  se hai qualche condizione di salute. Vedi i nostri <a href="./terms.html">Termini di servizio</a>
+  per i dettagli.</p>
+
+  <h3>La ricerca prodotti non trova il mio articolo</h3>
+  <p>I risultati provengono dal database pubblico Open Food Facts e richiedono una connessione a
+  internet. Se un prodotto non è elencato, puoi aggiungerlo manualmente con i tuoi valori di
+  carboidrati e sodio.</p>
+
+  <footer>
+    CarbPlanner · <a href="./privacy.html">Informativa sulla privacy</a> · <a href="./terms.html">Termini di servizio</a>
+  </footer>
+  </div>
+
+  <!-- ===================== DEUTSCH ===================== -->
+  <div data-lang="de" data-title="Support — CarbPlanner">
+  <h1>CarbPlanner Support</h1>
+  <p class="updated">Wir helfen dir gerne.</p>
+
+  <div class="card">
+    <p class="contact">📧 Schreib uns an
+    <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a></p>
+    <p>Wir versuchen, innerhalb weniger Werktage zu antworten. Bitte gib deine iOS-Version und eine
+    kurze Beschreibung des Vorfalls an — ein Screenshot hilft sehr.</p>
+  </div>
+
+  <h2>Häufige Fragen</h2>
+
+  <h3>Wie entscheidet CarbPlanner, wann man essen soll?</h3>
+  <p>Du legst ein Ziel für Kohlenhydrate pro Stunde fest und fügst deine Produkte hinzu (Gels, Riegel,
+  Kaudrops, Getränke). Die App verteilt deine Zufuhr so, dass die Aufnahme über die Zeit gleichmäßig
+  bleibt — größere Produkte halten länger und reservieren mehr Raum um sich herum. Wenn du eine Route
+  (GPX) importierst, verschiebt sie die Zufuhr außerdem auf flacheres Gelände und bringt Energie vor
+  Anstiegen ein, abgestimmt darauf, wie schnell jeder Produkttyp aufgenommen wird.</p>
+
+  <h3>Werden meine Daten gesichert?</h3>
+  <p>Wenn du bei iCloud angemeldet bist, speichert CarbPlanner bei jeder Änderung automatisch ein
+  Backup deiner Pläne, Produkte und deines Verlaufs in deinem eigenen privaten iCloud. Du kannst den
+  Zeitpunkt des letzten Backups sehen und manuell sichern unter Profil → Daten &amp; Backup. Das
+  Backup liegt nur in deinem Apple-Konto — wir können es nicht sehen. Wenn iCloud aus ist, funktionieren
+  deine Daten weiterhin lokal; sie werden nur nicht gesichert, bis du iCloud aktivierst oder selbst
+  eine Datei exportierst.</p>
+
+  <h3>Meine Daten sind verschwunden / ich habe ein neues Telefon</h3>
+  <p>Deine Pläne und dein Verlauf werden auf dem Gerät gespeichert und — wenn du bei iCloud angemeldet
+  bist — auch in deinem privaten iCloud gesichert. Um auf ein neues Telefon zu wechseln, melde dich
+  mit derselben Apple-ID an und installiere CarbPlanner: Beim Öffnen auf einer Neuinstallation bietet
+  die App an, dein letztes Backup wiederherzustellen. Wird nichts angeboten, prüfe, ob iCloud Drive
+  für CarbPlanner aktiviert ist (Einstellungen → [dein Name] → iCloud → Apps, die iCloud verwenden)
+  und ob du dieselbe Apple-ID nutzt. Du kannst auch unter Profil → Daten &amp; Backup eine
+  Backup-Datei exportieren und sie auf dem neuen Gerät importieren.</p>
+
+  <h3>Wie verwalte oder kündige ich mein Abonnement?</h3>
+  <p>Abonnements werden von Apple verwaltet. Öffne <strong>Einstellungen → [dein Name] →
+  Abonnements</strong> auf deinem Gerät, um den Tarif zu ändern, zu kündigen oder dein
+  Verlängerungsdatum zu sehen. Nutze in der App „Käufe wiederherstellen" auf der Bezahlseite, falls ein
+  Kauf nicht angezeigt wird.</p>
+
+  <h3>Ist mein Verpflegungsplan eine medizinische Beratung?</h3>
+  <p>Nein. CarbPlanner ist ein Planungswerkzeug, keine medizinische oder diätetische Beratung.
+  Konsultiere einen Arzt oder eine zugelassene Ernährungsfachkraft, bevor du deine
+  Verpflegungsstrategie änderst, besonders wenn du einen Gesundheitszustand hast. Siehe unsere
+  <a href="./terms.html">Nutzungsbedingungen</a> für Details.</p>
+
+  <h3>Die Produktsuche findet meinen Artikel nicht</h3>
+  <p>Die Suchergebnisse stammen aus der öffentlichen Datenbank Open Food Facts und benötigen eine
+  Internetverbindung. Ist ein Produkt nicht gelistet, kannst du es manuell mit deinen eigenen Werten
+  für Kohlenhydrate und Natrium hinzufügen.</p>
+
+  <footer>
+    CarbPlanner · <a href="./privacy.html">Datenschutzrichtlinie</a> · <a href="./terms.html">Nutzungsbedingungen</a>
+  </footer>
+  </div>
+
+<script>
+(function(){
+  var LANGS=['en','sv','es','fr','it','de'];
+  var NAMES={en:'English',sv:'Svenska',es:'Español',fr:'Français',it:'Italiano',de:'Deutsch'};
+  function pick(){
+    try{var s=localStorage.getItem('cp-lang');if(s&&LANGS.indexOf(s)>=0)return s;}catch(e){}
+    var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'en'];
+    for(var i=0;i<navs.length;i++){var c=(navs[i]||'').slice(0,2).toLowerCase();if(LANGS.indexOf(c)>=0)return c;}
+    return 'en';
+  }
+  function apply(lang){
+    var blocks=document.querySelectorAll('[data-lang]');
+    for(var i=0;i<blocks.length;i++){
+      blocks[i].classList.toggle('active',blocks[i].getAttribute('data-lang')===lang);
+    }
+    document.documentElement.lang=lang;
+    var active=document.querySelector('[data-lang="'+lang+'"]');
+    if(active&&active.getAttribute('data-title'))document.title=active.getAttribute('data-title');
+    var sel=document.getElementById('langsel');if(sel)sel.value=lang;
+  }
+  var current=pick();
+  function init(){
+    var sel=document.getElementById('langsel');
+    if(sel){
+      for(var i=0;i<LANGS.length;i++){var o=document.createElement('option');o.value=LANGS[i];o.textContent=NAMES[LANGS[i]];sel.appendChild(o);}
+      sel.addEventListener('change',function(){try{localStorage.setItem('cp-lang',sel.value);}catch(e){}apply(sel.value);});
+    }
+    apply(current);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

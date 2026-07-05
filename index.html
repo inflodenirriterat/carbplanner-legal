@@ -11,14 +11,61 @@
     text-align:center;}
   h1{font-size:26px;}
   a{display:inline-block;margin:10px;color:#4A3B7A;font-size:16px;}
+  .langbar{margin-top:24px;}
+  .langbar select{font:inherit;font-size:14px;color:inherit;background:#fff;border:1px solid #d9d3e6;
+    border-radius:8px;padding:5px 8px;}
   @media (prefers-color-scheme: dark){
     body{background:#151020;color:#EDE8F5;}
     a{color:#B7A6F0;}
+    .langbar select{background:#211A33;border-color:#3a3150;}
   }
 </style>
 </head>
 <body>
   <h1>CarbPlanner</h1>
-  <p><a href="./support.html">Support</a> · <a href="./privacy.html">Privacy Policy</a> · <a href="./terms.html">Terms of Service</a></p>
+  <p>
+    <a href="./support.html" data-i18n="support">Support</a> ·
+    <a href="./privacy.html" data-i18n="privacy">Privacy Policy</a> ·
+    <a href="./terms.html" data-i18n="terms">Terms of Service</a>
+  </p>
+  <div class="langbar"><select id="langsel" aria-label="Language / Språk"></select></div>
+
+<script>
+(function(){
+  var LANGS=['en','sv','es','fr','it','de'];
+  var NAMES={en:'English',sv:'Svenska',es:'Español',fr:'Français',it:'Italiano',de:'Deutsch'};
+  var LABELS={
+    en:{support:'Support',privacy:'Privacy Policy',terms:'Terms of Service'},
+    sv:{support:'Support',privacy:'Integritetspolicy',terms:'Användarvillkor'},
+    es:{support:'Soporte',privacy:'Política de privacidad',terms:'Términos del servicio'},
+    fr:{support:'Assistance',privacy:'Politique de confidentialité',terms:"Conditions d'utilisation"},
+    it:{support:'Assistenza',privacy:'Informativa sulla privacy',terms:'Termini di servizio'},
+    de:{support:'Support',privacy:'Datenschutzrichtlinie',terms:'Nutzungsbedingungen'}
+  };
+  function pick(){
+    try{var s=localStorage.getItem('cp-lang');if(s&&LANGS.indexOf(s)>=0)return s;}catch(e){}
+    var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'en'];
+    for(var i=0;i<navs.length;i++){var c=(navs[i]||'').slice(0,2).toLowerCase();if(LANGS.indexOf(c)>=0)return c;}
+    return 'en';
+  }
+  function apply(lang){
+    document.documentElement.lang=lang;
+    var map=LABELS[lang]||LABELS.en;
+    var links=document.querySelectorAll('[data-i18n]');
+    for(var i=0;i<links.length;i++){var k=links[i].getAttribute('data-i18n');if(map[k])links[i].textContent=map[k];}
+    var sel=document.getElementById('langsel');if(sel)sel.value=lang;
+  }
+  var current=pick();
+  function init(){
+    var sel=document.getElementById('langsel');
+    if(sel){
+      for(var i=0;i<LANGS.length;i++){var o=document.createElement('option');o.value=LANGS[i];o.textContent=NAMES[LANGS[i]];sel.appendChild(o);}
+      sel.addEventListener('change',function(){try{localStorage.setItem('cp-lang',sel.value);}catch(e){}apply(sel.value);});
+    }
+    apply(current);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>

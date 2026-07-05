@@ -16,22 +16,33 @@
   a{color:#4A3B7A;}
   .card{background:#fff;border-radius:14px;padding:20px 22px;margin-top:24px;}
   footer{margin-top:48px;font-size:13px;color:#8A7E72;text-align:center;}
+  .langbar{display:flex;justify-content:flex-end;margin-bottom:8px;}
+  .langbar select{font:inherit;font-size:14px;color:inherit;background:#fff;border:1px solid #d9d3e6;
+    border-radius:8px;padding:5px 8px;}
+  [data-lang]{display:none;}
+  [data-lang].active{display:block;}
   @media (prefers-color-scheme: dark){
     body{background:#151020;color:#EDE8F5;}
     .card{background:#211A33;}
     .updated,footer{color:#9d94b5;}
     a{color:#B7A6F0;}
+    .langbar select{background:#211A33;border-color:#3a3150;}
   }
 </style>
 </head>
 <body>
+  <div class="langbar"><select id="langsel" aria-label="Language / Språk"></select></div>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <div data-lang="en" data-title="Privacy Policy — CarbPlanner">
   <h1>Privacy Policy</h1>
-  <p class="updated">CarbPlanner · Last updated July 3, 2026</p>
+  <p class="updated">CarbPlanner · Last updated July 5, 2026</p>
 
   <div class="card">
     <p>CarbPlanner is an endurance-fueling planner built to run almost entirely on your device. This
     policy explains what data the app touches, why, and what stays under your control. In short:
-    almost everything stays on your phone and never reaches us.</p>
+    almost everything stays on your phone, and the only copy that ever leaves it goes to your own
+    private iCloud — never to us.</p>
   </div>
 
   <h2>Who is responsible for your data</h2>
@@ -46,9 +57,20 @@
 
   <h2>What's stored, and where</h2>
   <p>Everything you enter — your fueling plans, products, drink recipes, session history, and
-  favorites — is stored locally on your device only, using Apple's standard on-device storage
-  (Preferences/UserDefaults). None of it is uploaded to a server we operate, and we have no way to
-  access it. Deleting the app deletes this data permanently.</p>
+  favorites — is stored locally on your device, using Apple's standard on-device storage
+  (Preferences/UserDefaults).</p>
+  <p>If you are signed in to iCloud, the app also keeps an automatic backup of this data so you don't
+  lose it when you reinstall the app or move to a new device. That backup is a single file saved in
+  your own private iCloud (Apple's iCloud Drive storage for the app). It stays inside your personal
+  Apple account: we operate no server, we receive nothing, and we have no way to access it. The
+  iCloud backup is handled by Apple and governed by
+  <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy
+  Policy</a>. You can turn it off at any time by disabling iCloud Drive for CarbPlanner in your
+  device settings, or by signing out of iCloud. You can also export a backup file, or import one,
+  manually from within the app.</p>
+  <p>Deleting the app removes the on-device copy. Your iCloud backup stays in your Apple account
+  until you delete it there (for example in iCloud Drive) or remove the app's iCloud data from your
+  device settings.</p>
 
   <h2>Routes (GPX files)</h2>
   <p>If you import a GPX route file to plan fueling around terrain (climbs, descents), the file is
@@ -61,7 +83,7 @@
   is attached to that request. Open Food Facts is not operated by us — see their own
   <a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener">privacy policy</a>.</p>
 
-  <h2>Subscriptions & payments</h2>
+  <h2>Subscriptions &amp; payments</h2>
   <p>Subscriptions are sold and processed entirely by Apple through the App Store (StoreKit). We
   never see or store your payment details. Apple's handling of your purchase and billing information
   is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's
@@ -71,7 +93,7 @@
   <p>Reminders (e.g. trial-ending or hydration prompts) are scheduled locally on your device. We do
   not operate a push-notification server and do not know if or when you receive them.</p>
 
-  <h2>Optional analytics & crash reporting</h2>
+  <h2>Optional analytics &amp; crash reporting</h2>
   <p>CarbPlanner may use two optional, privacy-focused third-party services to help us fix bugs and
   understand feature usage:</p>
   <ul>
@@ -90,14 +112,16 @@
   <ul>
     <li><strong>Legal basis.</strong> Where the optional analytics and crash reporting above are
     active, we rely on our legitimate interest (Art. 6(1)(f) GDPR) in fixing bugs and improving the
-    app, using only anonymous or technical data. Your on-device content is not processed by us at
-    all, so no legal basis is needed for it.</li>
-    <li><strong>Retention.</strong> On-device data stays until you delete it or remove the app. Any
-    anonymous analytics or crash data is retained by the respective provider (Aptabase / Sentry)
-    according to their policies and then deleted; we keep no separate copy.</li>
-    <li><strong>International transfers.</strong> Sentry is operated from the United States, so if
-    crash reporting is enabled, technical crash data may be processed there under the provider's
-    standard safeguards. Aptabase offers EU-based hosting.</li>
+    app, using only anonymous or technical data. Your on-device content and its iCloud backup are not
+    processed by us at all, so no legal basis is needed for them.</li>
+    <li><strong>Retention.</strong> On-device data stays until you delete it or remove the app. If
+    iCloud backup is enabled, a copy is also kept in your own iCloud account until you delete it
+    there. Any anonymous analytics or crash data is retained by the respective provider (Aptabase /
+    Sentry) according to their policies and then deleted; we keep no separate copy.</li>
+    <li><strong>International transfers.</strong> Your iCloud backup is stored by Apple in your own
+    account; where Apple stores it is governed by Apple's terms. Sentry is operated from the United
+    States, so if crash reporting is enabled, technical crash data may be processed there under the
+    provider's standard safeguards. Aptabase offers EU-based hosting.</li>
   </ul>
 
   <h2>Children</h2>
@@ -105,8 +129,9 @@
   from them.</p>
 
   <h2>Your rights and choices</h2>
-  <p>Because your plans and history live on your device, you are already in control of them — delete
-  individual sessions from within the app, or delete the app to remove everything. We hold no server
+  <p>Because your plans and history live on your device — and any backup lives in your own iCloud
+  account, which you control — you are already in charge of them. Delete individual sessions from
+  within the app, or delete the app and your iCloud backup to remove everything. We hold no server
   copy to return or erase.</p>
   <p>Under the GDPR and similar laws you also have the right to access, correct, delete, or object to
   the processing of any personal data a controller holds about you, and to data portability. Since
@@ -128,5 +153,689 @@
   <footer>
     CarbPlanner · <a href="./terms.html">Terms of Service</a>
   </footer>
+  </div>
+
+  <!-- ===================== SVENSKA ===================== -->
+  <div data-lang="sv" data-title="Integritetspolicy — CarbPlanner">
+  <h1>Integritetspolicy</h1>
+  <p class="updated">CarbPlanner · Senast uppdaterad 5 juli 2026</p>
+
+  <div class="card">
+    <p>CarbPlanner är en planerare för energiintag under uthållighetsträning, byggd för att köras
+    nästan helt på din enhet. Den här policyn förklarar vilka uppgifter appen hanterar, varför, och
+    vad som förblir under din kontroll. Kort sagt: nästan allt stannar i din telefon, och den enda
+    kopia som någonsin lämnar den går till ditt eget privata iCloud — aldrig till oss.</p>
+  </div>
+
+  <h2>Vem ansvarar för dina uppgifter</h2>
+  <p>Personuppgiftsansvarig för CarbPlanner är <strong>Carl Sonnebo</strong>, en oberoende
+  apputvecklare. Du når oss på
+  <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a> för alla integritetsfrågor eller
+  för att utöva dina rättigheter som beskrivs nedan.</p>
+
+  <h2>Inget konto, ingen registrering</h2>
+  <p>CarbPlanner kräver inte att du skapar ett konto eller uppger ditt namn, din e-post eller några
+  identifierande uppgifter för att använda appen.</p>
+
+  <h2>Vad som lagras, och var</h2>
+  <p>Allt du matar in — dina energiplaner, produkter, dryckesrecept, träningshistorik och favoriter —
+  lagras lokalt på din enhet med Apples standardlagring på enheten (Preferences/UserDefaults).</p>
+  <p>Om du är inloggad på iCloud gör appen dessutom en automatisk säkerhetskopia av dessa uppgifter
+  så att du inte förlorar dem när du installerar om appen eller byter enhet. Säkerhetskopian är en
+  enda fil som sparas i ditt eget privata iCloud (Apples iCloud Drive-lagring för appen). Den stannar
+  inom ditt personliga Apple-konto: vi driver ingen server, vi tar emot ingenting, och vi har inget
+  sätt att komma åt den. iCloud-säkerhetskopian hanteras av Apple och omfattas av
+  <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apples
+  integritetspolicy</a>. Du kan stänga av den när som helst genom att inaktivera iCloud Drive för
+  CarbPlanner i enhetens inställningar, eller genom att logga ut från iCloud. Du kan också exportera
+  en säkerhetskopiefil, eller importera en, manuellt inifrån appen.</p>
+  <p>Om du raderar appen tas kopian på enheten bort. Din iCloud-säkerhetskopia ligger kvar i ditt
+  Apple-konto tills du raderar den där (till exempel i iCloud Drive) eller tar bort appens
+  iCloud-data i enhetens inställningar.</p>
+
+  <h2>Rutter (GPX-filer)</h2>
+  <p>Om du importerar en GPX-ruttfil för att planera intag efter terrängen (stigningar, utförslöpor)
+  tolkas filen helt på din enhet för att bygga din plan. Den laddas aldrig upp eller överförs någonstans.</p>
+
+  <h2>Produktsökning</h2>
+  <p>Om du söker efter en mat- eller dryckesprodukt med namn eller streckkod skickas din söktext till
+  <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener">Open Food Facts</a>, en
+  offentlig, oberoende näringsdatabas, för att returnera resultat. Ingen annan information om dig
+  bifogas den förfrågan. Open Food Facts drivs inte av oss — se deras egen
+  <a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener">integritetspolicy</a>.</p>
+
+  <h2>Prenumerationer &amp; betalningar</h2>
+  <p>Prenumerationer säljs och hanteras helt av Apple via App Store (StoreKit). Vi ser eller lagrar
+  aldrig dina betalningsuppgifter. Apples hantering av ditt köp och din faktureringsinformation
+  omfattas av <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apples
+  integritetspolicy</a>.</p>
+
+  <h2>Aviseringar</h2>
+  <p>Påminnelser (t.ex. om att provperioden tar slut eller om vätskeintag) schemaläggs lokalt på din
+  enhet. Vi driver ingen server för push-aviseringar och vet inte om eller när du tar emot dem.</p>
+
+  <h2>Valfri analys &amp; kraschrapportering</h2>
+  <p>CarbPlanner kan använda två valfria, integritetsfokuserade tredjepartstjänster för att hjälpa
+  oss rätta fel och förstå hur funktioner används:</p>
+  <ul>
+    <li><strong>Aptabase</strong> — anonym analys av produktanvändning (t.ex. vilka skärmar som
+    öppnas). Aptabase använder ingen bestående identifierare kopplad till dig eller din enhet. Se
+    <a href="https://aptabase.com/legal" target="_blank" rel="noopener">Aptabases integritetsdokumentation</a>.</li>
+    <li><strong>Sentry</strong> — krasch- och felrapporter med tekniska detaljer (t.ex. ett
+    stackspår) för att hjälpa oss rätta fel. Vi konfigurerar inte Sentry att samla in
+    personuppgifter. Se <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentrys integritetspolicy</a>.</li>
+  </ul>
+  <p>Ingen av tjänsterna används för annonsering, och vi säljer eller delar inte dina uppgifter med
+  någon i marknadsföringssyfte. Vi har inga annons-SDK:er från tredje part i appen.</p>
+
+  <h2>Rättslig grund, lagring och överföringar (GDPR)</h2>
+  <p>För användare inom Europeiska ekonomiska samarbetsområdet och Storbritannien:</p>
+  <ul>
+    <li><strong>Rättslig grund.</strong> När den valfria analysen och kraschrapporteringen ovan är
+    aktiv stödjer vi oss på vårt berättigade intresse (art. 6.1 f GDPR) av att rätta fel och förbättra
+    appen, med enbart anonyma eller tekniska uppgifter. Ditt innehåll på enheten och dess
+    iCloud-säkerhetskopia behandlas inte alls av oss, så ingen rättslig grund behövs för dem.</li>
+    <li><strong>Lagring.</strong> Uppgifter på enheten ligger kvar tills du raderar dem eller tar
+    bort appen. Om iCloud-säkerhetskopiering är aktiverad förvaras även en kopia i ditt eget
+    iCloud-konto tills du raderar den där. Eventuella anonyma analys- eller kraschuppgifter behålls av
+    respektive leverantör (Aptabase / Sentry) enligt deras policyer och raderas sedan; vi behåller
+    ingen egen kopia.</li>
+    <li><strong>Internationella överföringar.</strong> Din iCloud-säkerhetskopia lagras av Apple i
+    ditt eget konto; var Apple lagrar den omfattas av Apples villkor. Sentry drivs från USA, så om
+    kraschrapportering är aktiverad kan tekniska kraschuppgifter behandlas där under leverantörens
+    sedvanliga skyddsåtgärder. Aptabase erbjuder hosting inom EU.</li>
+  </ul>
+
+  <h2>Barn</h2>
+  <p>CarbPlanner riktar sig inte till barn under 13 år och vi samlar inte medvetet in uppgifter från dem.</p>
+
+  <h2>Dina rättigheter och val</h2>
+  <p>Eftersom dina planer och din historik finns på din enhet — och en eventuell säkerhetskopia
+  finns i ditt eget iCloud-konto, som du styr över — har du redan kontroll över dem. Radera enskilda
+  pass inifrån appen, eller radera appen och din iCloud-säkerhetskopia för att ta bort allt. Vi har
+  ingen serverkopia att lämna ut eller radera.</p>
+  <p>Enligt GDPR och liknande lagar har du också rätt att få tillgång till, rätta, radera eller
+  invända mot behandlingen av personuppgifter som en personuppgiftsansvarig har om dig, samt rätt
+  till dataportabilitet. Eftersom vi i praktiken inte har några personuppgifter om dig (analys- och
+  kraschdata är anonyma eller tekniska) finns det oftast inget för oss att hämta ut — men om du har
+  någon fråga, mejla oss på
+  <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a> så svarar vi.</p>
+  <p>Om du anser att dina uppgifter har hanterats felaktigt har du rätt att lämna in ett klagomål
+  till din lokala dataskyddsmyndighet. I Sverige är detta Integritetsskyddsmyndigheten (IMY,
+  <a href="https://www.imy.se" target="_blank" rel="noopener">imy.se</a>).</p>
+
+  <h2>Ändringar i denna policy</h2>
+  <p>Om denna policy ändras uppdaterar vi datumet högst upp på sidan och publicerar den reviderade
+  versionen på samma URL.</p>
+
+  <h2>Kontakt</h2>
+  <p>Frågor om denna policy? Mejla
+  <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a>.</p>
+
+  <footer>
+    CarbPlanner · <a href="./terms.html">Användarvillkor</a>
+  </footer>
+  </div>
+
+  <!-- ===================== ESPAÑOL ===================== -->
+  <div data-lang="es" data-title="Política de privacidad — CarbPlanner">
+  <h1>Política de privacidad</h1>
+  <p class="updated">CarbPlanner · Última actualización: 5 de julio de 2026</p>
+
+  <div class="card">
+    <p>CarbPlanner es un planificador de nutrición para deportes de resistencia diseñado para
+    funcionar casi por completo en tu dispositivo. Esta política explica qué datos utiliza la app, por
+    qué, y qué permanece bajo tu control. En resumen: casi todo se queda en tu teléfono, y la única
+    copia que llega a salir de él va a tu propio iCloud privado, nunca a nosotros.</p>
+  </div>
+
+  <h2>Quién es responsable de tus datos</h2>
+  <p>El responsable del tratamiento de datos de CarbPlanner es <strong>Carl Sonnebo</strong>, un
+  desarrollador de apps independiente. Puedes escribirnos a
+  <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a> para cualquier consulta de
+  privacidad o para ejercer los derechos que se describen abajo.</p>
+
+  <h2>Sin cuenta, sin registro</h2>
+  <p>CarbPlanner no requiere que crees una cuenta ni que proporciones tu nombre, correo electrónico o
+  cualquier información identificativa para usar la app.</p>
+
+  <h2>Qué se almacena y dónde</h2>
+  <p>Todo lo que introduces —tus planes de nutrición, productos, recetas de bebidas, historial de
+  sesiones y favoritos— se almacena localmente en tu dispositivo mediante el almacenamiento estándar
+  de Apple en el dispositivo (Preferences/UserDefaults).</p>
+  <p>Si has iniciado sesión en iCloud, la app también guarda una copia de seguridad automática de
+  estos datos para que no los pierdas al reinstalar la app o cambiar de dispositivo. Esa copia es un
+  único archivo guardado en tu propio iCloud privado (el almacenamiento de iCloud Drive de Apple para
+  la app). Permanece dentro de tu cuenta personal de Apple: no operamos ningún servidor, no recibimos
+  nada y no tenemos forma de acceder a ella. La copia de seguridad de iCloud la gestiona Apple y se
+  rige por la <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Política
+  de privacidad de Apple</a>. Puedes desactivarla en cualquier momento desactivando iCloud Drive para
+  CarbPlanner en los ajustes de tu dispositivo, o cerrando sesión en iCloud. También puedes exportar
+  un archivo de copia de seguridad, o importar uno, manualmente desde la app.</p>
+  <p>Al eliminar la app se borra la copia del dispositivo. Tu copia de seguridad de iCloud permanece
+  en tu cuenta de Apple hasta que la elimines allí (por ejemplo en iCloud Drive) o borres los datos
+  de iCloud de la app en los ajustes de tu dispositivo.</p>
+
+  <h2>Rutas (archivos GPX)</h2>
+  <p>Si importas un archivo de ruta GPX para planificar la nutrición según el terreno (subidas,
+  bajadas), el archivo se procesa por completo en tu dispositivo para crear tu plan. Nunca se sube ni
+  se transmite a ningún sitio.</p>
+
+  <h2>Búsqueda de productos</h2>
+  <p>Si buscas un producto de comida o bebida por nombre o código de barras, tu texto de búsqueda se
+  envía a <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener">Open Food Facts</a>,
+  una base de datos nutricional pública e independiente, para devolver resultados. No se adjunta
+  ninguna otra información sobre ti a esa solicitud. Open Food Facts no está operado por nosotros;
+  consulta su propia
+  <a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener">política de privacidad</a>.</p>
+
+  <h2>Suscripciones y pagos</h2>
+  <p>Las suscripciones las vende y procesa íntegramente Apple a través de la App Store (StoreKit).
+  Nunca vemos ni almacenamos tus datos de pago. El tratamiento por parte de Apple de tu compra y de
+  tu información de facturación se rige por la
+  <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Política de
+  privacidad de Apple</a>.</p>
+
+  <h2>Notificaciones</h2>
+  <p>Los recordatorios (p. ej., fin de la prueba gratuita o avisos de hidratación) se programan
+  localmente en tu dispositivo. No operamos ningún servidor de notificaciones push y no sabemos si o
+  cuándo las recibes.</p>
+
+  <h2>Analítica y informes de errores opcionales</h2>
+  <p>CarbPlanner puede usar dos servicios de terceros opcionales y centrados en la privacidad para
+  ayudarnos a corregir errores y entender el uso de las funciones:</p>
+  <ul>
+    <li><strong>Aptabase</strong> — analítica anónima de uso del producto (p. ej., qué pantallas se
+    abren). Aptabase no usa ningún identificador persistente vinculado a ti o a tu dispositivo.
+    Consulta la <a href="https://aptabase.com/legal" target="_blank" rel="noopener">documentación de privacidad de Aptabase</a>.</li>
+    <li><strong>Sentry</strong> — informes de fallos y errores con detalles técnicos (p. ej., una
+    traza de la pila) para ayudarnos a corregir errores. No configuramos Sentry para recopilar
+    información personal. Consulta la
+    <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Política de privacidad de Sentry</a>.</li>
+  </ul>
+  <p>Ninguno de los servicios se usa para publicidad, y no vendemos ni compartimos tus datos con
+  nadie con fines de marketing. No tenemos SDK de publicidad de terceros en la app.</p>
+
+  <h2>Base jurídica, conservación y transferencias (RGPD)</h2>
+  <p>Para usuarios del Espacio Económico Europeo y el Reino Unido:</p>
+  <ul>
+    <li><strong>Base jurídica.</strong> Cuando la analítica y los informes de errores opcionales
+    anteriores están activos, nos basamos en nuestro interés legítimo (art. 6.1.f del RGPD) en
+    corregir errores y mejorar la app, usando solo datos anónimos o técnicos. Tu contenido en el
+    dispositivo y su copia de seguridad en iCloud no son tratados por nosotros en absoluto, por lo que
+    no se necesita ninguna base jurídica para ellos.</li>
+    <li><strong>Conservación.</strong> Los datos del dispositivo permanecen hasta que los elimines o
+    borres la app. Si la copia de seguridad de iCloud está activada, también se conserva una copia en
+    tu propia cuenta de iCloud hasta que la elimines allí. Cualquier dato anónimo de analítica o de
+    fallos lo conserva el proveedor correspondiente (Aptabase / Sentry) según sus políticas y luego se
+    elimina; nosotros no guardamos ninguna copia aparte.</li>
+    <li><strong>Transferencias internacionales.</strong> Tu copia de seguridad de iCloud la almacena
+    Apple en tu propia cuenta; dónde la almacena Apple se rige por los términos de Apple. Sentry opera
+    desde Estados Unidos, así que, si los informes de errores están activados, los datos técnicos de
+    fallos pueden tratarse allí bajo las garantías estándar del proveedor. Aptabase ofrece alojamiento
+    en la UE.</li>
+  </ul>
+
+  <h2>Menores</h2>
+  <p>CarbPlanner no está dirigido a menores de 13 años y no recopilamos información de ellos de forma
+  consciente.</p>
+
+  <h2>Tus derechos y opciones</h2>
+  <p>Como tus planes e historial residen en tu dispositivo —y cualquier copia de seguridad reside en
+  tu propia cuenta de iCloud, que tú controlas— ya tienes el control sobre ellos. Elimina sesiones
+  individuales desde la app, o borra la app y tu copia de seguridad de iCloud para eliminarlo todo. No
+  tenemos ninguna copia en servidor que devolver o borrar.</p>
+  <p>Conforme al RGPD y leyes similares, también tienes derecho a acceder, rectificar, suprimir u
+  oponerte al tratamiento de cualquier dato personal que un responsable tenga sobre ti, y a la
+  portabilidad de los datos. Como en la práctica no tenemos ningún dato personal sobre ti (los datos
+  de analítica y de fallos son anónimos o técnicos), normalmente no hay nada que podamos recuperar;
+  pero si tienes alguna duda, escríbenos a
+  <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a> y te responderemos.</p>
+  <p>Si crees que tus datos se han tratado de forma indebida, tienes derecho a presentar una
+  reclamación ante tu autoridad local de protección de datos. En Suecia es la Autoridad Sueca para la
+  Protección de la Privacidad (IMY, <a href="https://www.imy.se" target="_blank" rel="noopener">imy.se</a>).</p>
+
+  <h2>Cambios en esta política</h2>
+  <p>Si esta política cambia, actualizaremos la fecha en la parte superior de esta página y
+  publicaremos la versión revisada en esta misma URL.</p>
+
+  <h2>Contacto</h2>
+  <p>¿Preguntas sobre esta política? Escribe a
+  <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a>.</p>
+
+  <footer>
+    CarbPlanner · <a href="./terms.html">Términos del servicio</a>
+  </footer>
+  </div>
+
+  <!-- ===================== FRANÇAIS ===================== -->
+  <div data-lang="fr" data-title="Politique de confidentialité — CarbPlanner">
+  <h1>Politique de confidentialité</h1>
+  <p class="updated">CarbPlanner · Dernière mise à jour : 5 juillet 2026</p>
+
+  <div class="card">
+    <p>CarbPlanner est un planificateur de nutrition pour les sports d'endurance conçu pour
+    fonctionner presque entièrement sur votre appareil. Cette politique explique quelles données
+    l'app utilise, pourquoi, et ce qui reste sous votre contrôle. En bref : presque tout reste sur
+    votre téléphone, et la seule copie qui en sort va vers votre propre iCloud privé, jamais vers nous.</p>
+  </div>
+
+  <h2>Qui est responsable de vos données</h2>
+  <p>Le responsable du traitement des données de CarbPlanner est <strong>Carl Sonnebo</strong>, un
+  développeur d'applications indépendant. Vous pouvez nous contacter à
+  <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a> pour toute question de
+  confidentialité ou pour exercer les droits décrits ci-dessous.</p>
+
+  <h2>Pas de compte, pas d'inscription</h2>
+  <p>CarbPlanner ne vous oblige pas à créer un compte ni à fournir votre nom, votre e-mail ou toute
+  information d'identification pour utiliser l'app.</p>
+
+  <h2>Ce qui est stocké, et où</h2>
+  <p>Tout ce que vous saisissez — vos plans de nutrition, produits, recettes de boissons, historique
+  de séances et favoris — est stocké localement sur votre appareil, via le stockage local standard
+  d'Apple (Preferences/UserDefaults).</p>
+  <p>Si vous êtes connecté à iCloud, l'app conserve aussi une sauvegarde automatique de ces données
+  afin que vous ne les perdiez pas lorsque vous réinstallez l'app ou changez d'appareil. Cette
+  sauvegarde est un fichier unique enregistré dans votre propre iCloud privé (le stockage iCloud Drive
+  d'Apple pour l'app). Elle reste au sein de votre compte Apple personnel : nous n'exploitons aucun
+  serveur, nous ne recevons rien et nous n'avons aucun moyen d'y accéder. La sauvegarde iCloud est
+  gérée par Apple et régie par la
+  <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">politique de
+  confidentialité d'Apple</a>. Vous pouvez la désactiver à tout moment en désactivant iCloud Drive
+  pour CarbPlanner dans les réglages de votre appareil, ou en vous déconnectant d'iCloud. Vous pouvez
+  aussi exporter un fichier de sauvegarde, ou en importer un, manuellement depuis l'app.</p>
+  <p>Supprimer l'app supprime la copie présente sur l'appareil. Votre sauvegarde iCloud reste dans
+  votre compte Apple jusqu'à ce que vous la supprimiez là-bas (par exemple dans iCloud Drive) ou que
+  vous supprimiez les données iCloud de l'app dans les réglages de votre appareil.</p>
+
+  <h2>Itinéraires (fichiers GPX)</h2>
+  <p>Si vous importez un fichier d'itinéraire GPX pour planifier la nutrition selon le terrain (montées,
+  descentes), le fichier est analysé entièrement sur votre appareil pour construire votre plan. Il
+  n'est jamais téléversé ni transmis où que ce soit.</p>
+
+  <h2>Recherche de produits</h2>
+  <p>Si vous recherchez un produit alimentaire ou une boisson par nom ou code-barres, votre texte de
+  recherche est envoyé à
+  <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener">Open Food Facts</a>, une
+  base de données nutritionnelle publique et indépendante, afin de renvoyer des résultats. Aucune
+  autre information vous concernant n'est jointe à cette requête. Open Food Facts n'est pas exploité
+  par nous — consultez leur propre
+  <a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener">politique de confidentialité</a>.</p>
+
+  <h2>Abonnements et paiements</h2>
+  <p>Les abonnements sont vendus et traités entièrement par Apple via l'App Store (StoreKit). Nous ne
+  voyons ni ne stockons jamais vos informations de paiement. Le traitement par Apple de votre achat et
+  de vos informations de facturation est régi par la
+  <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">politique de
+  confidentialité d'Apple</a>.</p>
+
+  <h2>Notifications</h2>
+  <p>Les rappels (par ex. fin de la période d'essai ou invitations à s'hydrater) sont programmés
+  localement sur votre appareil. Nous n'exploitons aucun serveur de notifications push et ne savons
+  pas si ni quand vous les recevez.</p>
+
+  <h2>Analytique et rapports de plantage optionnels</h2>
+  <p>CarbPlanner peut utiliser deux services tiers optionnels et respectueux de la vie privée pour
+  nous aider à corriger des bugs et à comprendre l'utilisation des fonctionnalités :</p>
+  <ul>
+    <li><strong>Aptabase</strong> — analytique anonyme d'utilisation du produit (par ex. quels écrans
+    sont ouverts). Aptabase n'utilise aucun identifiant persistant lié à vous ou à votre appareil.
+    Voir la <a href="https://aptabase.com/legal" target="_blank" rel="noopener">documentation de confidentialité d'Aptabase</a>.</li>
+    <li><strong>Sentry</strong> — rapports de plantage et d'erreur contenant des détails techniques
+    (par ex. une trace de pile) pour nous aider à corriger des bugs. Nous ne configurons pas Sentry
+    pour collecter des informations personnelles. Voir la
+    <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">politique de confidentialité de Sentry</a>.</li>
+  </ul>
+  <p>Aucun de ces services n'est utilisé à des fins publicitaires, et nous ne vendons ni ne partageons
+  vos données avec quiconque à des fins marketing. Nous n'avons aucun SDK publicitaire tiers dans l'app.</p>
+
+  <h2>Base légale, conservation et transferts (RGPD)</h2>
+  <p>Pour les utilisateurs de l'Espace économique européen et du Royaume-Uni :</p>
+  <ul>
+    <li><strong>Base légale.</strong> Lorsque l'analytique et les rapports de plantage optionnels
+    ci-dessus sont actifs, nous nous appuyons sur notre intérêt légitime (art. 6, §1, f) du RGPD) à
+    corriger des bugs et améliorer l'app, en n'utilisant que des données anonymes ou techniques. Votre
+    contenu sur l'appareil et sa sauvegarde iCloud ne sont absolument pas traités par nous, aucune
+    base légale n'est donc nécessaire pour eux.</li>
+    <li><strong>Conservation.</strong> Les données sur l'appareil restent jusqu'à ce que vous les
+    supprimiez ou supprimiez l'app. Si la sauvegarde iCloud est activée, une copie est aussi conservée
+    dans votre propre compte iCloud jusqu'à ce que vous l'y supprimiez. Les éventuelles données
+    anonymes d'analytique ou de plantage sont conservées par le fournisseur concerné (Aptabase /
+    Sentry) selon ses politiques puis supprimées ; nous n'en gardons aucune copie distincte.</li>
+    <li><strong>Transferts internationaux.</strong> Votre sauvegarde iCloud est stockée par Apple dans
+    votre propre compte ; l'endroit où Apple la stocke est régi par les conditions d'Apple. Sentry est
+    exploité depuis les États-Unis, donc si les rapports de plantage sont activés, les données
+    techniques de plantage peuvent y être traitées sous les garanties standard du fournisseur.
+    Aptabase propose un hébergement dans l'UE.</li>
+  </ul>
+
+  <h2>Enfants</h2>
+  <p>CarbPlanner ne s'adresse pas aux enfants de moins de 13 ans et nous ne collectons pas sciemment
+  d'informations les concernant.</p>
+
+  <h2>Vos droits et choix</h2>
+  <p>Comme vos plans et votre historique résident sur votre appareil — et que toute sauvegarde réside
+  dans votre propre compte iCloud, que vous contrôlez — vous en avez déjà la maîtrise. Supprimez des
+  séances individuelles depuis l'app, ou supprimez l'app et votre sauvegarde iCloud pour tout
+  effacer. Nous ne détenons aucune copie sur serveur à restituer ou effacer.</p>
+  <p>En vertu du RGPD et de lois similaires, vous avez aussi le droit d'accéder, de rectifier, de
+  supprimer ou de vous opposer au traitement de toute donnée personnelle qu'un responsable détient sur
+  vous, ainsi que le droit à la portabilité des données. Comme nous ne détenons en pratique aucune
+  donnée personnelle vous concernant (les données d'analytique et de plantage sont anonymes ou
+  techniques), il n'y a généralement rien à récupérer — mais en cas de doute, écrivez-nous à
+  <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a> et nous répondrons.</p>
+  <p>Si vous estimez que vos données ont été traitées de manière inappropriée, vous avez le droit
+  d'introduire une réclamation auprès de votre autorité locale de protection des données. En Suède, il
+  s'agit de l'Autorité suédoise de protection de la vie privée (IMY,
+  <a href="https://www.imy.se" target="_blank" rel="noopener">imy.se</a>).</p>
+
+  <h2>Modifications de cette politique</h2>
+  <p>Si cette politique change, nous mettrons à jour la date en haut de cette page et publierons la
+  version révisée à cette même URL.</p>
+
+  <h2>Contact</h2>
+  <p>Des questions sur cette politique ? Écrivez à
+  <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a>.</p>
+
+  <footer>
+    CarbPlanner · <a href="./terms.html">Conditions d'utilisation</a>
+  </footer>
+  </div>
+
+  <!-- ===================== ITALIANO ===================== -->
+  <div data-lang="it" data-title="Informativa sulla privacy — CarbPlanner">
+  <h1>Informativa sulla privacy</h1>
+  <p class="updated">CarbPlanner · Ultimo aggiornamento: 5 luglio 2026</p>
+
+  <div class="card">
+    <p>CarbPlanner è un pianificatore di alimentazione per gli sport di resistenza, progettato per
+    funzionare quasi interamente sul tuo dispositivo. Questa informativa spiega quali dati l'app
+    utilizza, perché e cosa resta sotto il tuo controllo. In breve: quasi tutto resta sul tuo
+    telefono e l'unica copia che ne esce va nel tuo iCloud privato, mai a noi.</p>
+  </div>
+
+  <h2>Chi è responsabile dei tuoi dati</h2>
+  <p>Il titolare del trattamento dei dati di CarbPlanner è <strong>Carl Sonnebo</strong>, uno
+  sviluppatore di app indipendente. Puoi contattarci a
+  <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a> per qualsiasi domanda sulla
+  privacy o per esercitare i diritti descritti di seguito.</p>
+
+  <h2>Nessun account, nessuna registrazione</h2>
+  <p>CarbPlanner non richiede di creare un account né di fornire nome, e-mail o qualsiasi informazione
+  identificativa per usare l'app.</p>
+
+  <h2>Cosa viene memorizzato e dove</h2>
+  <p>Tutto ciò che inserisci — i tuoi piani di alimentazione, prodotti, ricette di bevande, cronologia
+  delle sessioni e preferiti — viene memorizzato localmente sul tuo dispositivo, usando la memoria
+  standard di Apple sul dispositivo (Preferences/UserDefaults).</p>
+  <p>Se hai eseguito l'accesso a iCloud, l'app conserva anche un backup automatico di questi dati in
+  modo che tu non li perda quando reinstalli l'app o passi a un nuovo dispositivo. Il backup è un
+  singolo file salvato nel tuo iCloud privato (lo spazio iCloud Drive di Apple per l'app). Rimane
+  all'interno del tuo account Apple personale: non gestiamo alcun server, non riceviamo nulla e non
+  abbiamo modo di accedervi. Il backup su iCloud è gestito da Apple ed è regolato dall'
+  <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Informativa sulla
+  privacy di Apple</a>. Puoi disattivarlo in qualsiasi momento disattivando iCloud Drive per
+  CarbPlanner nelle impostazioni del dispositivo, oppure disconnettendoti da iCloud. Puoi anche
+  esportare un file di backup, o importarne uno, manualmente dall'app.</p>
+  <p>Eliminando l'app si rimuove la copia sul dispositivo. Il tuo backup su iCloud rimane nel tuo
+  account Apple finché non lo elimini lì (ad esempio in iCloud Drive) o non rimuovi i dati iCloud
+  dell'app nelle impostazioni del dispositivo.</p>
+
+  <h2>Percorsi (file GPX)</h2>
+  <p>Se importi un file di percorso GPX per pianificare l'alimentazione in base al terreno (salite,
+  discese), il file viene elaborato interamente sul tuo dispositivo per creare il piano. Non viene mai
+  caricato né trasmesso da nessuna parte.</p>
+
+  <h2>Ricerca prodotti</h2>
+  <p>Se cerchi un prodotto alimentare o una bevanda per nome o codice a barre, il testo della tua
+  ricerca viene inviato a
+  <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener">Open Food Facts</a>, un
+  database nutrizionale pubblico e indipendente, per restituire i risultati. A quella richiesta non è
+  allegata nessun'altra informazione su di te. Open Food Facts non è gestito da noi — consulta la loro
+  <a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener">informativa sulla privacy</a>.</p>
+
+  <h2>Abbonamenti e pagamenti</h2>
+  <p>Gli abbonamenti sono venduti e gestiti interamente da Apple tramite l'App Store (StoreKit). Non
+  vediamo né memorizziamo mai i tuoi dati di pagamento. Il trattamento da parte di Apple del tuo
+  acquisto e delle informazioni di fatturazione è regolato dall'
+  <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Informativa sulla
+  privacy di Apple</a>.</p>
+
+  <h2>Notifiche</h2>
+  <p>I promemoria (ad es. fine del periodo di prova o inviti all'idratazione) vengono programmati
+  localmente sul tuo dispositivo. Non gestiamo alcun server di notifiche push e non sappiamo se o
+  quando le ricevi.</p>
+
+  <h2>Analisi e segnalazione errori opzionali</h2>
+  <p>CarbPlanner può usare due servizi di terze parti opzionali e attenti alla privacy per aiutarci a
+  correggere i bug e a capire l'utilizzo delle funzioni:</p>
+  <ul>
+    <li><strong>Aptabase</strong> — analisi anonima dell'utilizzo del prodotto (ad es. quali schermate
+    vengono aperte). Aptabase non usa alcun identificatore persistente collegato a te o al tuo
+    dispositivo. Consulta la <a href="https://aptabase.com/legal" target="_blank" rel="noopener">documentazione sulla privacy di Aptabase</a>.</li>
+    <li><strong>Sentry</strong> — segnalazioni di crash ed errori contenenti dettagli tecnici (ad es.
+    uno stack trace) per aiutarci a correggere i bug. Non configuriamo Sentry per raccogliere
+    informazioni personali. Consulta l'
+    <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Informativa sulla privacy di Sentry</a>.</li>
+  </ul>
+  <p>Nessuno dei due servizi è usato per la pubblicità e non vendiamo né condividiamo i tuoi dati con
+  nessuno a fini di marketing. Non abbiamo SDK pubblicitari di terze parti nell'app.</p>
+
+  <h2>Base giuridica, conservazione e trasferimenti (GDPR)</h2>
+  <p>Per gli utenti dello Spazio economico europeo e del Regno Unito:</p>
+  <ul>
+    <li><strong>Base giuridica.</strong> Quando l'analisi e la segnalazione errori opzionali sopra
+    indicate sono attive, ci basiamo sul nostro legittimo interesse (art. 6, par. 1, lett. f, GDPR) a
+    correggere i bug e migliorare l'app, usando solo dati anonimi o tecnici. Il tuo contenuto sul
+    dispositivo e il suo backup su iCloud non sono affatto trattati da noi, quindi per essi non è
+    necessaria alcuna base giuridica.</li>
+    <li><strong>Conservazione.</strong> I dati sul dispositivo restano finché non li elimini o
+    rimuovi l'app. Se il backup su iCloud è attivo, una copia viene conservata anche nel tuo account
+    iCloud finché non la elimini lì. Eventuali dati anonimi di analisi o di crash sono conservati dal
+    rispettivo fornitore (Aptabase / Sentry) secondo le sue politiche e poi eliminati; noi non
+    conserviamo alcuna copia separata.</li>
+    <li><strong>Trasferimenti internazionali.</strong> Il tuo backup su iCloud è archiviato da Apple
+    nel tuo account; il luogo in cui Apple lo archivia è regolato dai termini di Apple. Sentry è
+    gestito dagli Stati Uniti, quindi se la segnalazione errori è attiva, i dati tecnici di crash
+    potrebbero essere trattati lì con le garanzie standard del fornitore. Aptabase offre hosting
+    nell'UE.</li>
+  </ul>
+
+  <h2>Minori</h2>
+  <p>CarbPlanner non è rivolto ai minori di 13 anni e non raccogliamo consapevolmente informazioni da
+  loro.</p>
+
+  <h2>I tuoi diritti e le tue scelte</h2>
+  <p>Poiché i tuoi piani e la tua cronologia risiedono sul tuo dispositivo — e ogni backup risiede nel
+  tuo account iCloud, che controlli tu — ne hai già il controllo. Elimina singole sessioni dall'app,
+  oppure elimina l'app e il tuo backup su iCloud per rimuovere tutto. Non deteniamo alcuna copia su
+  server da restituire o cancellare.</p>
+  <p>In base al GDPR e a leggi analoghe, hai anche il diritto di accedere, rettificare, cancellare o
+  opporti al trattamento di qualsiasi dato personale che un titolare detiene su di te, e alla
+  portabilità dei dati. Poiché in pratica non deteniamo alcun dato personale su di te (i dati di
+  analisi e di crash sono anonimi o tecnici), di solito non c'è nulla da recuperare — ma in caso di
+  dubbi scrivici a
+  <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a> e ti risponderemo.</p>
+  <p>Se ritieni che i tuoi dati siano stati trattati in modo scorretto, hai il diritto di presentare
+  un reclamo alla tua autorità locale per la protezione dei dati. In Svezia è l'Autorità svedese per
+  la protezione della privacy (IMY, <a href="https://www.imy.se" target="_blank" rel="noopener">imy.se</a>).</p>
+
+  <h2>Modifiche a questa informativa</h2>
+  <p>Se questa informativa cambia, aggiorneremo la data in cima a questa pagina e pubblicheremo la
+  versione rivista a questo stesso URL.</p>
+
+  <h2>Contatti</h2>
+  <p>Domande su questa informativa? Scrivi a
+  <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a>.</p>
+
+  <footer>
+    CarbPlanner · <a href="./terms.html">Termini di servizio</a>
+  </footer>
+  </div>
+
+  <!-- ===================== DEUTSCH ===================== -->
+  <div data-lang="de" data-title="Datenschutzrichtlinie — CarbPlanner">
+  <h1>Datenschutzrichtlinie</h1>
+  <p class="updated">CarbPlanner · Zuletzt aktualisiert: 5. Juli 2026</p>
+
+  <div class="card">
+    <p>CarbPlanner ist ein Verpflegungsplaner für den Ausdauersport, der fast vollständig auf deinem
+    Gerät läuft. Diese Richtlinie erklärt, welche Daten die App verarbeitet, warum, und was unter
+    deiner Kontrolle bleibt. Kurz gesagt: Fast alles bleibt auf deinem Telefon, und die einzige Kopie,
+    die es je verlässt, geht in dein eigenes privates iCloud – niemals zu uns.</p>
+  </div>
+
+  <h2>Wer für deine Daten verantwortlich ist</h2>
+  <p>Verantwortlicher für die Daten von CarbPlanner ist <strong>Carl Sonnebo</strong>, ein
+  unabhängiger App-Entwickler. Du erreichst uns unter
+  <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a> für jede Datenschutzfrage oder
+  zur Ausübung der unten beschriebenen Rechte.</p>
+
+  <h2>Kein Konto, keine Anmeldung</h2>
+  <p>CarbPlanner verlangt nicht, dass du ein Konto erstellst oder deinen Namen, deine E-Mail-Adresse
+  oder andere identifizierende Informationen angibst, um die App zu nutzen.</p>
+
+  <h2>Was gespeichert wird und wo</h2>
+  <p>Alles, was du eingibst — deine Verpflegungspläne, Produkte, Getränkerezepte, den Sitzungsverlauf
+  und Favoriten — wird lokal auf deinem Gerät gespeichert, über Apples standardmäßigen Speicher auf
+  dem Gerät (Preferences/UserDefaults).</p>
+  <p>Wenn du bei iCloud angemeldet bist, erstellt die App außerdem ein automatisches Backup dieser
+  Daten, damit du sie nicht verlierst, wenn du die App neu installierst oder das Gerät wechselst.
+  Dieses Backup ist eine einzelne Datei, die in deinem eigenen privaten iCloud (Apples
+  iCloud-Drive-Speicher für die App) gespeichert wird. Sie bleibt in deinem persönlichen
+  Apple-Konto: Wir betreiben keinen Server, wir erhalten nichts und wir haben keine Möglichkeit,
+  darauf zuzugreifen. Das iCloud-Backup wird von Apple verwaltet und unterliegt der
+  <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Datenschutzrichtlinie
+  von Apple</a>. Du kannst es jederzeit deaktivieren, indem du iCloud Drive für CarbPlanner in den
+  Geräteeinstellungen ausschaltest oder dich von iCloud abmeldest. Du kannst auch manuell eine
+  Backup-Datei aus der App exportieren oder eine importieren.</p>
+  <p>Beim Löschen der App wird die Kopie auf dem Gerät entfernt. Dein iCloud-Backup bleibt in deinem
+  Apple-Konto, bis du es dort löschst (zum Beispiel in iCloud Drive) oder die iCloud-Daten der App in
+  den Geräteeinstellungen entfernst.</p>
+
+  <h2>Routen (GPX-Dateien)</h2>
+  <p>Wenn du eine GPX-Routendatei importierst, um die Verpflegung an das Gelände (Anstiege, Abfahrten)
+  anzupassen, wird die Datei vollständig auf deinem Gerät verarbeitet, um deinen Plan zu erstellen.
+  Sie wird niemals hochgeladen oder irgendwohin übertragen.</p>
+
+  <h2>Produktsuche</h2>
+  <p>Wenn du ein Lebensmittel oder Getränk nach Namen oder Barcode suchst, wird dein Suchtext an
+  <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener">Open Food Facts</a>, eine
+  öffentliche, unabhängige Nährwertdatenbank, gesendet, um Ergebnisse zurückzugeben. Dieser Anfrage
+  werden keine weiteren Informationen über dich beigefügt. Open Food Facts wird nicht von uns
+  betrieben — siehe deren eigene
+  <a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener">Datenschutzrichtlinie</a>.</p>
+
+  <h2>Abonnements &amp; Zahlungen</h2>
+  <p>Abonnements werden vollständig von Apple über den App Store (StoreKit) verkauft und abgewickelt.
+  Wir sehen oder speichern deine Zahlungsdaten niemals. Der Umgang von Apple mit deinem Kauf und
+  deinen Rechnungsinformationen unterliegt der
+  <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Datenschutzrichtlinie
+  von Apple</a>.</p>
+
+  <h2>Benachrichtigungen</h2>
+  <p>Erinnerungen (z. B. zum Ende der Testphase oder zum Trinken) werden lokal auf deinem Gerät
+  geplant. Wir betreiben keinen Push-Benachrichtigungsserver und wissen nicht, ob oder wann du sie
+  erhältst.</p>
+
+  <h2>Optionale Analyse &amp; Absturzberichte</h2>
+  <p>CarbPlanner kann zwei optionale, datenschutzfreundliche Drittanbieterdienste nutzen, die uns
+  helfen, Fehler zu beheben und die Nutzung von Funktionen zu verstehen:</p>
+  <ul>
+    <li><strong>Aptabase</strong> — anonyme Analyse der Produktnutzung (z. B. welche Bildschirme
+    geöffnet werden). Aptabase verwendet keine dauerhafte Kennung, die mit dir oder deinem Gerät
+    verknüpft ist. Siehe <a href="https://aptabase.com/legal" target="_blank" rel="noopener">Aptabases Datenschutzdokumentation</a>.</li>
+    <li><strong>Sentry</strong> — Absturz- und Fehlerberichte mit technischen Details (z. B. ein
+    Stacktrace), um uns bei der Fehlerbehebung zu helfen. Wir konfigurieren Sentry nicht so, dass es
+    personenbezogene Daten erfasst. Siehe
+    <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentrys Datenschutzrichtlinie</a>.</li>
+  </ul>
+  <p>Keiner der Dienste wird für Werbung genutzt, und wir verkaufen oder teilen deine Daten mit
+  niemandem zu Marketingzwecken. Wir haben keine Werbe-SDKs von Drittanbietern in der App.</p>
+
+  <h2>Rechtsgrundlage, Speicherung und Übermittlungen (DSGVO)</h2>
+  <p>Für Nutzer im Europäischen Wirtschaftsraum und im Vereinigten Königreich:</p>
+  <ul>
+    <li><strong>Rechtsgrundlage.</strong> Wo die oben genannte optionale Analyse und
+    Absturzberichterstattung aktiv sind, stützen wir uns auf unser berechtigtes Interesse (Art. 6
+    Abs. 1 lit. f DSGVO) an der Fehlerbehebung und Verbesserung der App, wobei nur anonyme oder
+    technische Daten verwendet werden. Deine Inhalte auf dem Gerät und deren iCloud-Backup werden von
+    uns überhaupt nicht verarbeitet, sodass dafür keine Rechtsgrundlage erforderlich ist.</li>
+    <li><strong>Speicherung.</strong> Die Daten auf dem Gerät bleiben, bis du sie löschst oder die
+    App entfernst. Wenn das iCloud-Backup aktiviert ist, wird eine Kopie auch in deinem eigenen
+    iCloud-Konto aufbewahrt, bis du sie dort löschst. Etwaige anonyme Analyse- oder Absturzdaten
+    werden vom jeweiligen Anbieter (Aptabase / Sentry) gemäß dessen Richtlinien aufbewahrt und dann
+    gelöscht; wir behalten keine separate Kopie.</li>
+    <li><strong>Internationale Übermittlungen.</strong> Dein iCloud-Backup wird von Apple in deinem
+    eigenen Konto gespeichert; wo Apple es speichert, richtet sich nach den Bedingungen von Apple.
+    Sentry wird aus den Vereinigten Staaten betrieben, sodass technische Absturzdaten bei aktivierter
+    Absturzberichterstattung dort unter den üblichen Schutzmaßnahmen des Anbieters verarbeitet werden
+    können. Aptabase bietet Hosting in der EU an.</li>
+  </ul>
+
+  <h2>Kinder</h2>
+  <p>CarbPlanner richtet sich nicht an Kinder unter 13 Jahren, und wir erheben wissentlich keine
+  Informationen von ihnen.</p>
+
+  <h2>Deine Rechte und Wahlmöglichkeiten</h2>
+  <p>Da deine Pläne und dein Verlauf auf deinem Gerät liegen — und jedes Backup in deinem eigenen
+  iCloud-Konto liegt, das du kontrollierst — hast du bereits die Kontrolle darüber. Lösche einzelne
+  Sitzungen in der App oder lösche die App und dein iCloud-Backup, um alles zu entfernen. Wir halten
+  keine Serverkopie zum Herausgeben oder Löschen bereit.</p>
+  <p>Nach der DSGVO und ähnlichen Gesetzen hast du außerdem das Recht auf Auskunft, Berichtigung,
+  Löschung oder Widerspruch gegen die Verarbeitung personenbezogener Daten, die ein Verantwortlicher
+  über dich hält, sowie auf Datenübertragbarkeit. Da wir praktisch keine personenbezogenen Daten über
+  dich halten (Analyse- und Absturzdaten sind anonym oder technisch), gibt es in der Regel nichts
+  abzurufen — bei Bedenken schreibe uns aber an
+  <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a> und wir antworten.</p>
+  <p>Wenn du der Ansicht bist, dass deine Daten unsachgemäß behandelt wurden, hast du das Recht, bei
+  deiner örtlichen Datenschutzbehörde Beschwerde einzulegen. In Schweden ist dies die schwedische
+  Datenschutzbehörde (IMY, <a href="https://www.imy.se" target="_blank" rel="noopener">imy.se</a>).</p>
+
+  <h2>Änderungen dieser Richtlinie</h2>
+  <p>Wenn sich diese Richtlinie ändert, aktualisieren wir das Datum oben auf dieser Seite und
+  veröffentlichen die überarbeitete Fassung unter derselben URL.</p>
+
+  <h2>Kontakt</h2>
+  <p>Fragen zu dieser Richtlinie? Schreibe an
+  <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a>.</p>
+
+  <footer>
+    CarbPlanner · <a href="./terms.html">Nutzungsbedingungen</a>
+  </footer>
+  </div>
+
+<script>
+(function(){
+  var LANGS=['en','sv','es','fr','it','de'];
+  var NAMES={en:'English',sv:'Svenska',es:'Español',fr:'Français',it:'Italiano',de:'Deutsch'};
+  function pick(){
+    try{var s=localStorage.getItem('cp-lang');if(s&&LANGS.indexOf(s)>=0)return s;}catch(e){}
+    var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'en'];
+    for(var i=0;i<navs.length;i++){var c=(navs[i]||'').slice(0,2).toLowerCase();if(LANGS.indexOf(c)>=0)return c;}
+    return 'en';
+  }
+  function apply(lang){
+    var blocks=document.querySelectorAll('[data-lang]');
+    for(var i=0;i<blocks.length;i++){
+      blocks[i].classList.toggle('active',blocks[i].getAttribute('data-lang')===lang);
+    }
+    document.documentElement.lang=lang;
+    var active=document.querySelector('[data-lang="'+lang+'"]');
+    if(active&&active.getAttribute('data-title'))document.title=active.getAttribute('data-title');
+    var sel=document.getElementById('langsel');if(sel)sel.value=lang;
+  }
+  var current=pick();
+  function init(){
+    var sel=document.getElementById('langsel');
+    if(sel){
+      for(var i=0;i<LANGS.length;i++){var o=document.createElement('option');o.value=LANGS[i];o.textContent=NAMES[LANGS[i]];sel.appendChild(o);}
+      sel.addEventListener('change',function(){try{localStorage.setItem('cp-lang',sel.value);}catch(e){}apply(sel.value);});
+    }
+    apply(current);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>
