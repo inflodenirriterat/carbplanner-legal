@@ -383,10 +383,69 @@
   </footer>
   </div>
 
+  <!-- ===================== NEDERLANDS ===================== -->
+  <div data-lang="nl" data-title="Support — CarbPlanner">
+  <h1>CarbPlanner Support</h1>
+  <p class="updated">We helpen je graag.</p>
+
+  <div class="card">
+    <p class="contact">📧 Mail ons op
+    <a href="mailto:info.calson@icloud.com">info.calson@icloud.com</a></p>
+    <p>We proberen binnen een paar werkdagen te reageren. Vermeld je iOS-versie en een korte
+    beschrijving van wat er gebeurde — een screenshot helpt enorm.</p>
+  </div>
+
+  <h2>Veelgestelde vragen</h2>
+
+  <h3>Hoe bepaalt CarbPlanner wanneer ik moet eten?</h3>
+  <p>Je stelt een doel in van koolhydraten per uur en voegt je producten toe (gels, repen,
+  kauwsnoepjes, dranken). De app verdeelt je innames zo dat je inname gelijkmatig blijft over de
+  tijd — grotere producten gaan langer mee en reserveren meer ruimte om zich heen. Als je een route
+  (GPX) importeert, verschuift de app innames ook naar vlakkere stukken en zorgt hij dat de energie
+  binnen is vóór de beklimmingen, getimed op hoe snel elk producttype wordt opgenomen.</p>
+
+  <h3>Wordt mijn data geback-upt?</h3>
+  <p>Als je bent ingelogd bij iCloud slaat CarbPlanner automatisch een back-up van je plannen,
+  producten en geschiedenis op in je eigen privé-iCloud zodra er iets verandert. Je ziet het tijdstip
+  van de laatste back-up, en kunt handmatig back-uppen, onder Profiel → Data &amp; back-up. De
+  back-up staat alleen in jouw Apple-account — wij kunnen hem niet zien. Staat iCloud uit, dan werkt
+  je data gewoon lokaal; er wordt alleen geen back-up gemaakt totdat je iCloud aanzet of zelf een
+  bestand exporteert.</p>
+
+  <h3>Mijn data is verdwenen / ik heb een nieuwe telefoon</h3>
+  <p>Je plannen en geschiedenis staan op het apparaat en — als je bent ingelogd bij iCloud — ook in
+  een back-up in je privé-iCloud. Om over te stappen naar een nieuwe telefoon: log in met dezelfde
+  Apple ID en installeer CarbPlanner. Bij het openen na een verse installatie biedt de app aan je
+  laatste back-up terug te zetten. Krijg je dat niet aangeboden, controleer dan of iCloud Drive
+  aanstaat voor CarbPlanner (Instellingen → [je naam] → iCloud → Apps die iCloud gebruiken) en of je
+  dezelfde Apple ID gebruikt. Je kunt ook een back-upbestand exporteren via Profiel → Data &amp;
+  back-up en dat op het nieuwe apparaat importeren.</p>
+
+  <h3>Hoe beheer of annuleer ik mijn abonnement?</h3>
+  <p>Abonnementen worden afgehandeld door Apple. Open <strong>Instellingen → [je naam] →
+  Abonnementen</strong> op je apparaat om van abonnement te wisselen, op te zeggen of je
+  verlengingsdatum te zien. Gebruik in de app "Aankopen herstellen" op de betaalpagina als een
+  aankoop niet zichtbaar is.</p>
+
+  <h3>Is mijn voedingsplan medisch advies?</h3>
+  <p>Nee. CarbPlanner is een planningstool, geen medisch of diëtistisch advies. Raadpleeg een arts
+  of erkende diëtist voordat je je voedingsstrategie verandert, zeker als je een aandoening hebt.
+  Zie onze <a href="./terms.html">gebruiksvoorwaarden</a> voor details.</p>
+
+  <h3>De productzoeker vindt mijn product niet</h3>
+  <p>Zoekresultaten komen uit de openbare database Open Food Facts en vereisen een
+  internetverbinding. Staat een product er niet in, dan kun je het handmatig toevoegen met je eigen
+  koolhydraat- en natriumwaarden.</p>
+
+  <footer>
+    CarbPlanner · <a href="./privacy.html">Privacybeleid</a> · <a href="./terms.html">Gebruiksvoorwaarden</a>
+  </footer>
+  </div>
+
 <script>
 (function(){
-  var LANGS=['en','sv','es','fr','it','de'];
-  var NAMES={en:'English',sv:'Svenska',es:'Español',fr:'Français',it:'Italiano',de:'Deutsch'};
+  var LANGS=['en','sv','es','fr','it','de','nl'];
+  var NAMES={en:'English',sv:'Svenska',es:'Español',fr:'Français',it:'Italiano',de:'Deutsch',nl:'Nederlands'};
   function pick(){
     try{var s=localStorage.getItem('cp-lang');if(s&&LANGS.indexOf(s)>=0)return s;}catch(e){}
     var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'en'];

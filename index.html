@@ -32,15 +32,16 @@
 
 <script>
 (function(){
-  var LANGS=['en','sv','es','fr','it','de'];
-  var NAMES={en:'English',sv:'Svenska',es:'Español',fr:'Français',it:'Italiano',de:'Deutsch'};
+  var LANGS=['en','sv','es','fr','it','de','nl'];
+  var NAMES={en:'English',sv:'Svenska',es:'Español',fr:'Français',it:'Italiano',de:'Deutsch',nl:'Nederlands'};
   var LABELS={
     en:{support:'Support',privacy:'Privacy Policy',terms:'Terms of Service'},
     sv:{support:'Support',privacy:'Integritetspolicy',terms:'Användarvillkor'},
     es:{support:'Soporte',privacy:'Política de privacidad',terms:'Términos del servicio'},
     fr:{support:'Assistance',privacy:'Politique de confidentialité',terms:"Conditions d'utilisation"},
     it:{support:'Assistenza',privacy:'Informativa sulla privacy',terms:'Termini di servizio'},
-    de:{support:'Support',privacy:'Datenschutzrichtlinie',terms:'Nutzungsbedingungen'}
+    de:{support:'Support',privacy:'Datenschutzrichtlinie',terms:'Nutzungsbedingungen'},
+    nl:{support:'Support',privacy:'Privacybeleid',terms:'Gebruiksvoorwaarden'}
   };
   function pick(){
     try{var s=localStorage.getItem('cp-lang');if(s&&LANGS.indexOf(s)>=0)return s;}catch(e){}
