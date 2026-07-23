@@ -1,0 +1,12 @@
+{
+  "_readme": "CarbPlanner Remote Config (Niva 1). Andra varden har och 'git push' (Vercel auto-deployar) for att styra appen LIVE utan ny App Store-granskning. Bara webblagret (paywall/onboarding-text + pa/av-flaggor); native-kod kraver anda en release. Appen hamtar denna fil vid start med timeout + fallback, sa vid fel/offline anvands appens inbyggda defaults.",
+  "flags": {
+    "paywallTimeline": true
+  },
+  "overrides": {
+    "_readme": "Ersatt valfri i18n-textnyckel per sprak. '*' galler alla sprak. Exempel (bortkommenterat nedan) byter paywallens rubrik pa svenska. Ta bort '_example' och lagg riktiga nycklar direkt under sprakkoden.",
+    "_example": {
+      "sv": { "onboarding.trialHeadline": "7 DAGAR GRATIS" }
+    }
+  }
+}
