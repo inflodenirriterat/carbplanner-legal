@@ -3,45 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CarbPlanner — Legal</title>
+<title>CarbPlanner — Race nutrition, planned to the minute</title>
+<meta name="description" content="CarbPlanner builds a minute-by-minute carbs, hydration and caffeine plan for every ride, run and race — so you never bonk.">
+<meta property="og:title" content="CarbPlanner">
+<meta property="og:description" content="Know exactly what to eat — and when. Minute-by-minute fueling for endurance athletes.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="./assets/shots/en/1.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <style>
-  :root{color-scheme:light dark;}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    max-width:680px;margin:0 auto;padding:60px 20px;line-height:1.6;color:#1C1528;background:#F6F4FA;
-    text-align:center;}
-  h1{font-size:26px;}
-  a{display:inline-block;margin:10px;color:#4A3B7A;font-size:16px;}
-  .langbar{margin-top:24px;}
-  .langbar select{font:inherit;font-size:14px;color:inherit;background:#fff;border:1px solid #d9d3e6;
-    border-radius:8px;padding:5px 8px;}
-  @media (prefers-color-scheme: dark){
-    body{background:#151020;color:#EDE8F5;}
-    a{color:#B7A6F0;}
-    .langbar select{background:#211A33;border-color:#3a3150;}
+  :root{
+    --teal:#1B4D52; --tealD:#133840; --ink:#1C1814; --inkM:#4A4038; --inkL:#8A7E72;
+    --bg:#F8F7F5; --card:#FFFFFF; --border:#E4DDD6; --gold1:#E8C468; --gold2:#C4821A; --goldInk:#4A3208;
   }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px;}
+
+  /* HERO */
+  .hero{background:linear-gradient(170deg,var(--teal) 0%,var(--tealD) 100%);color:#fff;
+    padding:64px 0 72px;text-align:center;position:relative;overflow:hidden;}
+  .hero::after{content:"";position:absolute;inset:auto -10% -40% -10%;height:60%;
+    background:radial-gradient(ellipse at 50% 0,rgba(255,255,255,.10),transparent 70%);pointer-events:none;}
+  .logo{width:112px;height:112px;margin:0 auto 22px;filter:drop-shadow(0 12px 30px rgba(0,0,0,.35));}
+  h1{font-size:clamp(30px,5vw,50px);line-height:1.08;margin:.2em auto .35em;max-width:14ch;font-weight:800;letter-spacing:-.5px;}
+  .sub{font-size:clamp(16px,2.3vw,21px);color:rgba(255,255,255,.82);max-width:52ch;margin:0 auto 30px;}
+  .cta{display:inline-block;background:linear-gradient(135deg,var(--gold1),var(--gold2));color:var(--goldInk);
+    font-weight:800;font-size:18px;text-decoration:none;padding:15px 30px;border-radius:14px;
+    box-shadow:0 10px 26px rgba(0,0,0,.28);transition:transform .12s ease,box-shadow .12s ease;}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,0,0,.34);}
+  .ctaNote{margin-top:14px;font-size:14px;color:rgba(255,255,255,.66);}
+  .heroShot{margin:44px auto 0;width:min(300px,72vw);border-radius:34px;
+    box-shadow:0 30px 70px rgba(0,0,0,.38);}
+
+  /* FEATURES */
+  .features{padding:64px 0 20px;}
+  .fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .fcard{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px 22px;}
+  .fcard .em{font-size:30px;line-height:1;}
+  .fcard h3{margin:14px 0 6px;font-size:19px;}
+  .fcard p{margin:0;color:var(--inkM);font-size:15px;}
+
+  /* GALLERY */
+  .gallery{padding:56px 0 24px;text-align:center;}
+  .gallery h2{font-size:clamp(22px,3vw,30px);margin:0 0 30px;}
+  .shots{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
+  .shots img{width:min(240px,66vw);border-radius:26px;border:1px solid var(--border);
+    box-shadow:0 18px 44px rgba(20,20,20,.14);}
+
+  /* FOOTER */
+  footer{background:var(--tealD);color:rgba(255,255,255,.8);margin-top:56px;padding:44px 0 40px;text-align:center;}
+  footer .tag{color:#fff;font-weight:700;font-size:18px;margin-bottom:14px;}
+  footer nav a{color:rgba(255,255,255,.85);text-decoration:none;margin:0 10px;font-size:15px;}
+  footer nav a:hover{text-decoration:underline;}
+  .disc{font-size:12.5px;color:rgba(255,255,255,.5);max-width:52ch;margin:18px auto 0;}
+  .langbar{margin-top:22px;}
+  .langbar select{font:inherit;font-size:14px;color:#fff;background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.22);border-radius:8px;padding:6px 10px;}
+  .copyright{margin-top:16px;font-size:12.5px;color:rgba(255,255,255,.45);}
+
+  @media (max-width:760px){ .fgrid{grid-template-columns:1fr;} .hero{padding:52px 0 60px;} }
 </style>
 </head>
 <body>
-  <h1>CarbPlanner</h1>
-  <p>
-    <a href="./support.html" data-i18n="support">Support</a> ·
-    <a href="./privacy.html" data-i18n="privacy">Privacy Policy</a> ·
-    <a href="./terms.html" data-i18n="terms">Terms of Service</a>
-  </p>
-  <div class="langbar"><select id="langsel" aria-label="Language / Språk"></select></div>
+
+  <header class="hero">
+    <div class="wrap">
+      <img class="logo" src="./assets/logo.png" alt="CarbPlanner">
+      <h1 data-i18n="heroH1">Know exactly what to eat — and when.</h1>
+      <p class="sub" data-i18n="heroSub">CarbPlanner builds a minute-by-minute carbs, hydration and caffeine plan for every ride, run and race — so you never bonk.</p>
+      <!-- CTA: plain button by design. Before launch, swap for Apple's OFFICIAL
+           localized "Download on the App Store" badge from Apple Marketing
+           Resources (developer.apple.com/app-store/marketing/guidelines). -->
+      <a class="cta" id="cta" href="https://apps.apple.com/app/id6788753507" data-i18n="cta">Download on the App Store</a>
+      <div class="ctaNote" data-i18n="ctaNote">Free 7-day trial · iPhone &amp; Apple Watch</div>
+      <img class="heroShot" data-shot="1" src="./assets/shots/en/1.jpg" alt="CarbPlanner fueling timeline">
+    </div>
+  </header>
+
+  <section class="features">
+    <div class="wrap">
+      <div class="fgrid">
+        <div class="fcard"><div class="em">🎯</div><h3 data-i18n="f1t">Set your target</h3><p data-i18n="f1b">Tell it your session length and carbs per hour. CarbPlanner does the math.</p></div>
+        <div class="fcard"><div class="em">🧃</div><h3 data-i18n="f2t">Plan your fuel</h3><p data-i18n="f2b">Add the gels, bars, chews and bottles you'll actually carry — timed to the minute.</p></div>
+        <div class="fcard"><div class="em">⏱️</div><h3 data-i18n="f3t">Fuel on time</h3><p data-i18n="f3b">Live reminders, Apple Watch and Live Activity tell you exactly when to eat and drink.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="wrap">
+      <h2 data-i18n="shotsHeading">Built for endurance athletes</h2>
+      <div class="shots">
+        <img data-shot="1" src="./assets/shots/en/1.jpg" alt="CarbPlanner screenshot">
+        <img data-shot="2" src="./assets/shots/en/2.jpg" alt="CarbPlanner screenshot">
+        <img data-shot="3" src="./assets/shots/en/3.jpg" alt="CarbPlanner screenshot">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="tag" data-i18n="footerTagline">Fuel every ride, run &amp; race.</div>
+      <nav>
+        <a href="./support.html" data-i18n="support">Support</a> ·
+        <a href="./privacy.html" data-i18n="privacy">Privacy Policy</a> ·
+        <a href="./terms.html" data-i18n="terms">Terms of Service</a>
+      </nav>
+      <p class="disc" data-i18n="disc">General fueling guidance for healthy adults — not medical advice.</p>
+      <div class="langbar"><select id="langsel" aria-label="Language / Språk"></select></div>
+      <div class="copyright">© 2026 Carl Sonnebo</div>
+    </div>
+  </footer>
 
 <script>
 (function(){
   var LANGS=['en','sv','es','fr','it','de','nl'];
   var NAMES={en:'English',sv:'Svenska',es:'Español',fr:'Français',it:'Italiano',de:'Deutsch',nl:'Nederlands'};
-  var LABELS={
-    en:{support:'Support',privacy:'Privacy Policy',terms:'Terms of Service'},
-    sv:{support:'Support',privacy:'Integritetspolicy',terms:'Användarvillkor'},
-    es:{support:'Soporte',privacy:'Política de privacidad',terms:'Términos del servicio'},
-    fr:{support:'Assistance',privacy:'Politique de confidentialité',terms:"Conditions d'utilisation"},
-    it:{support:'Assistenza',privacy:'Informativa sulla privacy',terms:'Termini di servizio'},
-    de:{support:'Support',privacy:'Datenschutzrichtlinie',terms:'Nutzungsbedingungen'},
-    nl:{support:'Support',privacy:'Privacybeleid',terms:'Gebruiksvoorwaarden'}
+  var T={
+    en:{heroH1:"Know exactly what to eat — and when.",heroSub:"CarbPlanner builds a minute-by-minute carbs, hydration and caffeine plan for every ride, run and race — so you never bonk.",cta:"Download on the App Store",ctaNote:"Free 7-day trial · iPhone & Apple Watch",f1t:"Set your target",f1b:"Tell it your session length and carbs per hour. CarbPlanner does the math.",f2t:"Plan your fuel",f2b:"Add the gels, bars, chews and bottles you'll actually carry — timed to the minute.",f3t:"Fuel on time",f3b:"Live reminders, Apple Watch and Live Activity tell you exactly when to eat and drink.",shotsHeading:"Built for endurance athletes",footerTagline:"Fuel every ride, run & race.",disc:"General fueling guidance for healthy adults — not medical advice.",support:"Support",privacy:"Privacy Policy",terms:"Terms of Service"},
+    sv:{heroH1:"Vet exakt vad du ska äta — och när.",heroSub:"CarbPlanner bygger en minutplan för kolhydrater, vätska och koffein till varje pass, lopp och tävling — så att du aldrig går in i väggen.",cta:"Ladda ned på App Store",ctaNote:"7 dagars gratis prova-på · iPhone & Apple Watch",f1t:"Sätt ditt mål",f1b:"Ange passets längd och kolhydrater per timme. CarbPlanner räknar.",f2t:"Planera ditt intag",f2b:"Lägg till gels, bars, chews och flaskor du faktiskt bär med dig — inplanerade minut för minut.",f3t:"Få i dig energin i tid",f3b:"Live-påminnelser, Apple Watch och Live Activity säger exakt när du ska äta och dricka.",shotsHeading:"Byggd för uthållighetsidrottare",footerTagline:"Energi till varje pass, lopp och tävling.",disc:"Generella energiråd för friska vuxna — inte medicinsk rådgivning.",support:"Support",privacy:"Integritetspolicy",terms:"Användarvillkor"},
+    es:{heroH1:"Sabes exactamente qué comer — y cuándo.",heroSub:"CarbPlanner crea un plan minuto a minuto de carbohidratos, hidratación y cafeína para cada entrenamiento, carrera y competición — para que nunca te dé la pájara.",cta:"Descárgalo en el App Store",ctaNote:"Prueba gratis de 7 días · iPhone y Apple Watch",f1t:"Fija tu objetivo",f1b:"Indica la duración y los carbohidratos por hora. CarbPlanner calcula.",f2t:"Planifica tu avituallamiento",f2b:"Añade geles, barritas, gominolas y bidones que de verdad llevas — programados minuto a minuto.",f3t:"Repón a tiempo",f3b:"Avisos en directo, Apple Watch y Live Activity te dicen cuándo comer y beber.",shotsHeading:"Hecho para atletas de resistencia",footerTagline:"Energía para cada entrenamiento, carrera y competición.",disc:"Consejos de nutrición generales para adultos sanos — no es consejo médico.",support:"Soporte",privacy:"Política de privacidad",terms:"Términos del servicio"},
+    fr:{heroH1:"Tu sais exactement quoi manger — et quand.",heroSub:"CarbPlanner crée un plan minute par minute de glucides, hydratation et caféine pour chaque sortie, course et compétition — pour ne jamais avoir la fringale.",cta:"Télécharger dans l'App Store",ctaNote:"Essai gratuit de 7 jours · iPhone & Apple Watch",f1t:"Définis ton objectif",f1b:"Indique la durée et les glucides par heure. CarbPlanner calcule.",f2t:"Planifie ta nutrition",f2b:"Ajoute gels, barres, gommes et bidons que tu emportes — programmés minute par minute.",f3t:"Ravitaille-toi à temps",f3b:"Rappels en direct, Apple Watch et Live Activity t'indiquent quand manger et boire.",shotsHeading:"Conçu pour les athlètes d'endurance",footerTagline:"De l'énergie pour chaque sortie, course et compétition.",disc:"Conseils nutritionnels généraux pour adultes en bonne santé — pas un avis médical.",support:"Assistance",privacy:"Politique de confidentialité",terms:"Conditions d'utilisation"},
+    it:{heroH1:"Sai esattamente cosa mangiare — e quando.",heroSub:"CarbPlanner crea un piano minuto per minuto di carboidrati, idratazione e caffeina per ogni allenamento, corsa e gara — così non crolli mai.",cta:"Scarica su App Store",ctaNote:"Prova gratuita di 7 giorni · iPhone e Apple Watch",f1t:"Imposta l'obiettivo",f1b:"Indica durata e carboidrati all'ora. CarbPlanner calcola.",f2t:"Pianifica il rifornimento",f2b:"Aggiungi gel, barrette, chews e borracce che porti davvero — programmati minuto per minuto.",f3t:"Rifornisciti in tempo",f3b:"Promemoria live, Apple Watch e Live Activity ti dicono quando mangiare e bere.",shotsHeading:"Fatto per atleti di endurance",footerTagline:"Energia per ogni allenamento, corsa e gara.",disc:"Consigli nutrizionali generali per adulti sani — non è un parere medico.",support:"Assistenza",privacy:"Informativa sulla privacy",terms:"Termini di servizio"},
+    de:{heroH1:"Immer genau wissen, was du isst — und wann.",heroSub:"CarbPlanner erstellt einen minutengenauen Plan für Kohlenhydrate, Trinken und Koffein für jede Einheit, jeden Lauf und jedes Rennen — damit du nie einbrichst.",cta:"Laden im App Store",ctaNote:"7 Tage kostenlos testen · iPhone & Apple Watch",f1t:"Ziel festlegen",f1b:"Gib Dauer und Kohlenhydrate pro Stunde ein. CarbPlanner rechnet.",f2t:"Verpflegung planen",f2b:"Füge Gels, Riegel, Kaubonbons und Flaschen hinzu, die du wirklich dabeihast — minutengenau geplant.",f3t:"Rechtzeitig tanken",f3b:"Live-Erinnerungen, Apple Watch und Live Activity sagen dir genau, wann.",shotsHeading:"Für Ausdauersportler gemacht",footerTagline:"Energie für jede Einheit, jeden Lauf, jedes Rennen.",disc:"Allgemeine Verpflegungstipps für gesunde Erwachsene — keine medizinische Beratung.",support:"Support",privacy:"Datenschutzrichtlinie",terms:"Nutzungsbedingungen"},
+    nl:{heroH1:"Weet precies wat je moet eten — en wanneer.",heroSub:"CarbPlanner maakt een minuut-voor-minuut plan voor koolhydraten, hydratatie en cafeïne voor elke rit, loop en wedstrijd — zodat je nooit de man met de hamer tegenkomt.",cta:"Download in de App Store",ctaNote:"7 dagen gratis proberen · iPhone & Apple Watch",f1t:"Stel je doel in",f1b:"Geef duur en koolhydraten per uur op. CarbPlanner rekent.",f2t:"Plan je voeding",f2b:"Voeg gels, repen, chews en bidons toe die je echt meeneemt — minuut voor minuut ingepland.",f3t:"Tank op tijd bij",f3b:"Live-herinneringen, Apple Watch en Live Activity zeggen precies wanneer.",shotsHeading:"Gemaakt voor duursporters",footerTagline:"Energie voor elke rit, loop en wedstrijd.",disc:"Algemeen voedingsadvies voor gezonde volwassenen — geen medisch advies.",support:"Support",privacy:"Privacybeleid",terms:"Gebruiksvoorwaarden"}
   };
   function pick(){
     try{var s=localStorage.getItem('cp-lang');if(s&&LANGS.indexOf(s)>=0)return s;}catch(e){}
@@ -50,20 +139,21 @@
     return 'en';
   }
   function apply(lang){
+    var map=T[lang]||T.en;
     document.documentElement.lang=lang;
-    var map=LABELS[lang]||LABELS.en;
-    var links=document.querySelectorAll('[data-i18n]');
-    for(var i=0;i<links.length;i++){var k=links[i].getAttribute('data-i18n');if(map[k])links[i].textContent=map[k];}
+    var els=document.querySelectorAll('[data-i18n]');
+    for(var i=0;i<els.length;i++){var k=els[i].getAttribute('data-i18n');if(map[k]!=null)els[i].textContent=map[k];}
+    var shots=document.querySelectorAll('[data-shot]');
+    for(var j=0;j<shots.length;j++){var n=shots[j].getAttribute('data-shot');shots[j].src='./assets/shots/'+lang+'/'+n+'.jpg';}
     var sel=document.getElementById('langsel');if(sel)sel.value=lang;
   }
-  var current=pick();
   function init(){
     var sel=document.getElementById('langsel');
     if(sel){
       for(var i=0;i<LANGS.length;i++){var o=document.createElement('option');o.value=LANGS[i];o.textContent=NAMES[LANGS[i]];sel.appendChild(o);}
       sel.addEventListener('change',function(){try{localStorage.setItem('cp-lang',sel.value);}catch(e){}apply(sel.value);});
     }
-    apply(current);
+    apply(pick());
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
