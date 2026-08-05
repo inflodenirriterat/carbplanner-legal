@@ -36,7 +36,7 @@
   <!-- ===================== ENGLISH ===================== -->
   <div data-lang="en" data-title="Privacy Policy — CarbPlanner">
   <h1>Privacy Policy</h1>
-  <p class="updated">CarbPlanner · Last updated July 11, 2026</p>
+  <p class="updated">CarbPlanner · Last updated August 1, 2026</p>
 
   <div class="card">
     <p>CarbPlanner is an endurance-fueling planner built to run almost entirely on your device. This
@@ -73,8 +73,16 @@
   device settings.</p>
 
   <h2>Routes (GPX files)</h2>
-  <p>If you import a GPX route file to plan fueling around terrain (climbs, descents), the file is
-  parsed entirely on your device to build your plan. It is never uploaded or transmitted anywhere.</p>
+  <p data-added="maps-2026-08-01">If you import a route file (GPX, TCX or FIT) to plan fueling around terrain (climbs, descents), the file is parsed entirely on your device to build your plan. The file itself is never uploaded. Routes you save stay on your device and in your own iCloud backup. See <em>Maps and elevation</em> below for what happens when you open the map or fetch elevation for a route.</p>
+
+  <h2 data-added="maps-2026-08-01">Maps and elevation</h2>
+  <p>CarbPlanner can show your route on a map, and can look up elevation for routes that don't carry any. Both work by requesting map tiles — small, fixed squares of the world.</p>
+
+  <p>Map tiles come from <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a>, built from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> data. Elevation comes from <a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">Terrain Tiles</a>, an open dataset hosted on Amazon Web Services (its sources include Copernicus EU-DEM, Kartverket and the USGS). Neither service is operated by us.</p>
+
+  <p>To serve a tile, these services necessarily see which square was asked for, together with your IP address. That reveals roughly where your route is — not who you are. We send them no name, no plan, no saved routes and no identifier, and we receive nothing back about you.</p>
+
+  <p>Opening the map requests tiles automatically. Fetching elevation is a button you press, because it downloads several megabytes. If you never open the map and never fetch elevation, nothing about your route leaves your device.</p>
 
   <h2>Product search</h2>
   <p>If you search for a food or drink product by name or barcode, your search text is sent to
@@ -164,7 +172,7 @@
   <!-- ===================== SVENSKA ===================== -->
   <div data-lang="sv" data-title="Integritetspolicy — CarbPlanner">
   <h1>Integritetspolicy</h1>
-  <p class="updated">CarbPlanner · Senast uppdaterad 11 juli 2026</p>
+  <p class="updated">CarbPlanner · Senast uppdaterad 1 augusti 2026</p>
 
   <div class="card">
     <p>CarbPlanner är en planerare för energiintag under uthållighetsträning, byggd för att köras
@@ -200,8 +208,16 @@
   iCloud-data i enhetens inställningar.</p>
 
   <h2>Rutter (GPX-filer)</h2>
-  <p>Om du importerar en GPX-ruttfil för att planera intag efter terrängen (stigningar, utförslöpor)
-  tolkas filen helt på din enhet för att bygga din plan. Den laddas aldrig upp eller överförs någonstans.</p>
+  <p data-added="maps-2026-08-01">Om du importerar en ruttfil (GPX, TCX eller FIT) för att planera intaget efter terrängen (stigningar, utförskörning) tolkas filen helt på din enhet när planen byggs. Själva filen laddas aldrig upp. Rutter du sparar stannar på din enhet och i din egen iCloud-säkerhetskopia. Se <em>Kartor och höjddata</em> nedan för vad som händer när du öppnar kartan eller hämtar höjddata till en rutt.</p>
+
+  <h2 data-added="maps-2026-08-01">Kartor och höjddata</h2>
+  <p>CarbPlanner kan visa din rutt på en karta, och kan hämta höjddata till rutter som saknar sådan. Båda fungerar genom att begära kartrutor — små, fasta rutor av världen.</p>
+
+  <p>Kartrutorna kommer från <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a>, byggda på data från <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Höjddatan kommer från <a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">Terrain Tiles</a>, en öppen datamängd som ligger hos Amazon Web Services (källorna omfattar Copernicus EU-DEM, Kartverket och USGS). Ingen av tjänsterna drivs av oss.</p>
+
+  <p>För att kunna leverera en ruta måste tjänsterna se vilken ruta som efterfrågades, tillsammans med din IP-adress. Det avslöjar ungefär var din rutt ligger — inte vem du är. Vi skickar inget namn, ingen plan, inga sparade rutter och ingen identifierare, och vi får ingenting tillbaka om dig.</p>
+
+  <p>Att öppna kartan hämtar rutor automatiskt. Att hämta höjddata är en knapp du trycker på, eftersom det laddar ner flera megabyte. Öppnar du aldrig kartan och hämtar aldrig höjddata lämnar ingenting om din rutt din enhet.</p>
 
   <h2>Produktsökning</h2>
   <p>Om du söker efter en mat- eller dryckesprodukt med namn eller streckkod skickas din söktext till
@@ -292,7 +308,7 @@
   <!-- ===================== ESPAÑOL ===================== -->
   <div data-lang="es" data-title="Política de privacidad — CarbPlanner">
   <h1>Política de privacidad</h1>
-  <p class="updated">CarbPlanner · Última actualización: 11 de julio de 2026</p>
+  <p class="updated">CarbPlanner · Última actualización: 1 de agosto de 2026</p>
 
   <div class="card">
     <p>CarbPlanner es un planificador de nutrición para deportes de resistencia diseñado para
@@ -329,9 +345,16 @@
   de iCloud de la app en los ajustes de tu dispositivo.</p>
 
   <h2>Rutas (archivos GPX)</h2>
-  <p>Si importas un archivo de ruta GPX para planificar la nutrición según el terreno (subidas,
-  bajadas), el archivo se procesa por completo en tu dispositivo para crear tu plan. Nunca se sube ni
-  se transmite a ningún sitio.</p>
+  <p data-added="maps-2026-08-01">Si importas un archivo de ruta (GPX, TCX o FIT) para planificar la ingesta según el terreno (subidas, bajadas), el archivo se procesa íntegramente en tu dispositivo al crear el plan. El archivo en sí nunca se sube. Las rutas que guardas permanecen en tu dispositivo y en tu propia copia de seguridad de iCloud. Consulta <em>Mapas y altimetría</em> más abajo para saber qué ocurre cuando abres el mapa u obtienes la altimetría de una ruta.</p>
+
+  <h2 data-added="maps-2026-08-01">Mapas y altimetría</h2>
+  <p>CarbPlanner puede mostrar tu ruta en un mapa y obtener la altimetría de rutas que no la incluyen. Ambas cosas funcionan solicitando teselas de mapa: pequeños cuadrados fijos del mundo.</p>
+
+  <p>Las teselas del mapa proceden de <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a>, construidas con datos de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. La altimetría procede de <a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">Terrain Tiles</a>, un conjunto de datos abierto alojado en Amazon Web Services (sus fuentes incluyen Copernicus EU-DEM, Kartverket y el USGS). Ninguno de los dos servicios lo operamos nosotros.</p>
+
+  <p>Para entregar una tesela, estos servicios necesariamente ven qué cuadrado se pidió, junto con tu dirección IP. Eso revela aproximadamente dónde está tu ruta, no quién eres. No les enviamos ningún nombre, ningún plan, ninguna ruta guardada ni ningún identificador, y no recibimos nada sobre ti a cambio.</p>
+
+  <p>Abrir el mapa solicita teselas automáticamente. Obtener la altimetría es un botón que pulsas tú, porque descarga varios megabytes. Si nunca abres el mapa y nunca obtienes la altimetría, nada sobre tu ruta sale de tu dispositivo.</p>
 
   <h2>Búsqueda de productos</h2>
   <p>Si buscas un producto de comida o bebida por nombre o código de barras, tu texto de búsqueda se
@@ -429,7 +452,7 @@
   <!-- ===================== FRANÇAIS ===================== -->
   <div data-lang="fr" data-title="Politique de confidentialité — CarbPlanner">
   <h1>Politique de confidentialité</h1>
-  <p class="updated">CarbPlanner · Dernière mise à jour : 11 juillet 2026</p>
+  <p class="updated">CarbPlanner · Dernière mise à jour : 1er août 2026</p>
 
   <div class="card">
     <p>CarbPlanner est un planificateur de nutrition pour les sports d'endurance conçu pour
@@ -467,9 +490,16 @@
   vous supprimiez les données iCloud de l'app dans les réglages de votre appareil.</p>
 
   <h2>Itinéraires (fichiers GPX)</h2>
-  <p>Si vous importez un fichier d'itinéraire GPX pour planifier la nutrition selon le terrain (montées,
-  descentes), le fichier est analysé entièrement sur votre appareil pour construire votre plan. Il
-  n'est jamais téléversé ni transmis où que ce soit.</p>
+  <p data-added="maps-2026-08-01">Si vous importez un fichier d'itinéraire (GPX, TCX ou FIT) pour planifier votre nutrition en fonction du terrain (montées, descentes), le fichier est analysé entièrement sur votre appareil pour construire votre plan. Le fichier lui-même n'est jamais téléversé. Les itinéraires que vous enregistrez restent sur votre appareil et dans votre propre sauvegarde iCloud. Voir <em>Cartes et altitude</em> ci-dessous pour ce qui se passe lorsque vous ouvrez la carte ou récupérez l'altitude d'un itinéraire.</p>
+
+  <h2 data-added="maps-2026-08-01">Cartes et altitude</h2>
+  <p>CarbPlanner peut afficher votre itinéraire sur une carte et récupérer l'altitude des itinéraires qui n'en comportent pas. Les deux fonctionnent en demandant des tuiles de carte — de petits carrés fixes du monde.</p>
+
+  <p>Les tuiles de carte proviennent d'<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a>, construites à partir des données d'<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Les altitudes proviennent de <a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">Terrain Tiles</a>, un jeu de données ouvert hébergé chez Amazon Web Services (ses sources comprennent Copernicus EU-DEM, Kartverket et l'USGS). Aucun de ces services n'est exploité par nous.</p>
+
+  <p>Pour livrer une tuile, ces services voient nécessairement quel carré a été demandé, ainsi que votre adresse IP. Cela révèle approximativement où se trouve votre itinéraire — pas qui vous êtes. Nous ne leur transmettons aucun nom, aucun plan, aucun itinéraire enregistré et aucun identifiant, et nous ne recevons rien en retour à votre sujet.</p>
+
+  <p>Ouvrir la carte demande des tuiles automatiquement. Récupérer l'altitude est un bouton que vous actionnez, car cela télécharge plusieurs mégaoctets. Si vous n'ouvrez jamais la carte et ne récupérez jamais l'altitude, rien concernant votre itinéraire ne quitte votre appareil.</p>
 
   <h2>Recherche de produits</h2>
   <p>Si vous recherchez un produit alimentaire ou une boisson par nom ou code-barres, votre texte de
@@ -570,7 +600,7 @@
   <!-- ===================== ITALIANO ===================== -->
   <div data-lang="it" data-title="Informativa sulla privacy — CarbPlanner">
   <h1>Informativa sulla privacy</h1>
-  <p class="updated">CarbPlanner · Ultimo aggiornamento: 11 luglio 2026</p>
+  <p class="updated">CarbPlanner · Ultimo aggiornamento: 1 agosto 2026</p>
 
   <div class="card">
     <p>CarbPlanner è un pianificatore di alimentazione per gli sport di resistenza, progettato per
@@ -607,9 +637,16 @@
   dell'app nelle impostazioni del dispositivo.</p>
 
   <h2>Percorsi (file GPX)</h2>
-  <p>Se importi un file di percorso GPX per pianificare l'alimentazione in base al terreno (salite,
-  discese), il file viene elaborato interamente sul tuo dispositivo per creare il piano. Non viene mai
-  caricato né trasmesso da nessuna parte.</p>
+  <p data-added="maps-2026-08-01">Se importi un file di percorso (GPX, TCX o FIT) per pianificare l'alimentazione in base al terreno (salite, discese), il file viene elaborato interamente sul tuo dispositivo per costruire il piano. Il file stesso non viene mai caricato. I percorsi che salvi restano sul tuo dispositivo e nel tuo backup iCloud. Vedi <em>Mappe e altimetria</em> più sotto per cosa accade quando apri la mappa o scarichi l'altimetria di un percorso.</p>
+
+  <h2 data-added="maps-2026-08-01">Mappe e altimetria</h2>
+  <p>CarbPlanner può mostrare il tuo percorso su una mappa e recuperare l'altimetria per i percorsi che non la contengono. Entrambe le funzioni richiedono tessere di mappa: piccoli quadrati fissi del mondo.</p>
+
+  <p>Le tessere della mappa provengono da <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a>, costruite sui dati di <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. L'altimetria proviene da <a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">Terrain Tiles</a>, un insieme di dati aperto ospitato su Amazon Web Services (le sue fonti comprendono Copernicus EU-DEM, Kartverket e USGS). Nessuno dei due servizi è gestito da noi.</p>
+
+  <p>Per consegnare una tessera, questi servizi vedono necessariamente quale quadrato è stato richiesto, insieme al tuo indirizzo IP. Questo rivela all'incirca dove si trova il tuo percorso, non chi sei. Non inviamo loro alcun nome, alcun piano, alcun percorso salvato né alcun identificativo, e non riceviamo nulla su di te in cambio.</p>
+
+  <p>Aprire la mappa richiede tessere automaticamente. Scaricare l'altimetria è un pulsante che premi tu, perché scarica diversi megabyte. Se non apri mai la mappa e non scarichi mai l'altimetria, nulla del tuo percorso lascia il tuo dispositivo.</p>
 
   <h2>Ricerca prodotti</h2>
   <p>Se cerchi un prodotto alimentare o una bevanda per nome o codice a barre, il testo della tua
@@ -708,7 +745,7 @@
   <!-- ===================== DEUTSCH ===================== -->
   <div data-lang="de" data-title="Datenschutzrichtlinie — CarbPlanner">
   <h1>Datenschutzrichtlinie</h1>
-  <p class="updated">CarbPlanner · Zuletzt aktualisiert: 11. Juli 2026</p>
+  <p class="updated">CarbPlanner · Zuletzt aktualisiert: 1. August 2026</p>
 
   <div class="card">
     <p>CarbPlanner ist ein Verpflegungsplaner für den Ausdauersport, der fast vollständig auf deinem
@@ -746,9 +783,16 @@
   den Geräteeinstellungen entfernst.</p>
 
   <h2>Routen (GPX-Dateien)</h2>
-  <p>Wenn du eine GPX-Routendatei importierst, um die Verpflegung an das Gelände (Anstiege, Abfahrten)
-  anzupassen, wird die Datei vollständig auf deinem Gerät verarbeitet, um deinen Plan zu erstellen.
-  Sie wird niemals hochgeladen oder irgendwohin übertragen.</p>
+  <p data-added="maps-2026-08-01">Wenn du eine Routendatei (GPX, TCX oder FIT) importierst, um deine Verpflegung am Gelände auszurichten (Anstiege, Abfahrten), wird die Datei vollständig auf deinem Gerät ausgewertet, um deinen Plan zu erstellen. Die Datei selbst wird nie hochgeladen. Gespeicherte Routen bleiben auf deinem Gerät und in deinem eigenen iCloud-Backup. Siehe <em>Karten und Höhendaten</em> weiter unten dazu, was passiert, wenn du die Karte öffnest oder Höhendaten für eine Route lädst.</p>
+
+  <h2 data-added="maps-2026-08-01">Karten und Höhendaten</h2>
+  <p>CarbPlanner kann deine Route auf einer Karte anzeigen und Höhendaten für Routen laden, die keine enthalten. Beides funktioniert über Kartenkacheln — kleine, feste Quadrate der Welt.</p>
+
+  <p>Die Kartenkacheln stammen von <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> und beruhen auf Daten von <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Die Höhendaten stammen von <a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">Terrain Tiles</a>, einem offenen Datensatz bei Amazon Web Services (Quellen sind unter anderem Copernicus EU-DEM, Kartverket und USGS). Keiner der beiden Dienste wird von uns betrieben.</p>
+
+  <p>Um eine Kachel auszuliefern, sehen diese Dienste zwangsläufig, welches Quadrat angefragt wurde, zusammen mit deiner IP-Adresse. Das verrät ungefähr, wo deine Route liegt — nicht, wer du bist. Wir senden ihnen keinen Namen, keinen Plan, keine gespeicherten Routen und keine Kennung, und wir erhalten nichts über dich zurück.</p>
+
+  <p>Beim Öffnen der Karte werden Kacheln automatisch angefragt. Das Laden der Höhendaten ist eine Schaltfläche, die du drückst, denn dabei werden mehrere Megabyte geladen. Öffnest du die Karte nie und lädst nie Höhendaten, verlässt nichts über deine Route dein Gerät.</p>
 
   <h2>Produktsuche</h2>
   <p>Wenn du ein Lebensmittel oder Getränk nach Namen oder Barcode suchst, wird dein Suchtext an
@@ -847,7 +891,7 @@
   <!-- ===================== NEDERLANDS ===================== -->
   <div data-lang="nl" data-title="Privacybeleid — CarbPlanner">
   <h1>Privacybeleid</h1>
-  <p class="updated">CarbPlanner · Laatst bijgewerkt op 12 juli 2026</p>
+  <p class="updated">CarbPlanner · Laatst bijgewerkt op 1 augustus 2026</p>
 
   <div class="card">
     <p>CarbPlanner is een planner voor sportvoeding bij duursport, gebouwd om vrijwel volledig op je
@@ -885,9 +929,16 @@
   van de app verwijdert in de instellingen van je apparaat.</p>
 
   <h2>Routes (GPX-bestanden)</h2>
-  <p>Als je een GPX-routebestand importeert om je voeding te plannen rond het terrein (beklimmingen,
-  afdalingen), wordt het bestand volledig op je apparaat verwerkt om je plan te bouwen. Het wordt
-  nooit geüpload of ergens naartoe verzonden.</p>
+  <p data-added="maps-2026-08-01">Als je een routebestand (GPX, TCX of FIT) importeert om je voeding af te stemmen op het terrein (klimmen, afdalingen), wordt het bestand volledig op je apparaat verwerkt om je plan te bouwen. Het bestand zelf wordt nooit geüpload. Routes die je bewaart blijven op je apparaat en in je eigen iCloud-back-up. Zie <em>Kaarten en hoogtegegevens</em> hieronder voor wat er gebeurt als je de kaart opent of hoogtegegevens voor een route ophaalt.</p>
+
+  <h2 data-added="maps-2026-08-01">Kaarten en hoogtegegevens</h2>
+  <p>CarbPlanner kan je route op een kaart tonen en hoogtegegevens ophalen voor routes die die niet bevatten. Beide werken door kaarttegels op te vragen — kleine, vaste vierkanten van de wereld.</p>
+
+  <p>De kaarttegels komen van <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a>, gebouwd op gegevens van <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. De hoogtegegevens komen van <a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">Terrain Tiles</a>, een open dataset bij Amazon Web Services (de bronnen zijn onder meer Copernicus EU-DEM, Kartverket en USGS). Geen van beide diensten wordt door ons beheerd.</p>
+
+  <p>Om een tegel te leveren zien deze diensten noodzakelijkerwijs welk vierkant is opgevraagd, samen met je IP-adres. Dat verraadt ongeveer waar je route ligt — niet wie je bent. We sturen ze geen naam, geen plan, geen opgeslagen routes en geen identificatie, en we krijgen niets over jou terug.</p>
+
+  <p>Het openen van de kaart vraagt automatisch tegels op. Hoogtegegevens ophalen is een knop die jij indrukt, want dat downloadt enkele megabytes. Open je de kaart nooit en haal je nooit hoogtegegevens op, dan verlaat er niets over je route je apparaat.</p>
 
   <h2>Producten zoeken</h2>
   <p>Als je een voedings- of drankproduct zoekt op naam of barcode, wordt je zoektekst verzonden naar
