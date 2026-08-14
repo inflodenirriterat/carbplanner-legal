@@ -37,7 +37,7 @@
   <!-- ===================== ENGLISH ===================== -->
   <div data-lang="en" data-title="Privacy Policy — CarbPlanner">
   <h1>Privacy Policy</h1>
-  <p class="updated">CarbPlanner · Last updated August 1, 2026</p>
+  <p class="updated">CarbPlanner · Last updated August 14, 2026</p>
 
   <div class="card">
     <p>CarbPlanner is an endurance-fueling planner built to run almost entirely on your device. This
@@ -85,6 +85,24 @@
 
   <p>Opening the map requests tiles automatically. Fetching elevation is a button you press, because it downloads several megabytes. If you never open the map and never fetch elevation, nothing about your route leaves your device.</p>
 
+    <h2 data-added="routing-2026-08-05">Drawing a route</h2>
+  <p>CarbPlanner can draw a route on the map. You place points, and the app follows the road or trail network between them instead of drawing a straight line. Finding that path is not something a phone can do on its own, so it is asked of a routing service.</p>
+
+  <p>That service is <a href="https://valhalla.github.io/valhalla/" target="_blank" rel="noopener">Valhalla</a>, run by <a href="https://fossgis.de" target="_blank" rel="noopener">FOSSGIS e.V.</a>, a German non-profit. It is not operated by us, and there is no account and no key involved. Each request carries the header <code>X-Client-Id: carbplanner.app</code>, which tells the operator that the traffic comes from this app — it names the app, not you.</p>
+
+  <p>A request contains only the coordinates of the points you placed and which surface to prefer (road bike, gravel, mountain bike, or on foot). It carries no name, no plan, no saved routes and no identifier. We run no server of our own in between, so the drawn line reaches them directly and we never see it. What <a href="https://fossgis.de/datenschutzerkl%C3%A4rung/" target="_blank" rel="noopener">FOSSGIS</a> themselves log is described in their own privacy statement.</p>
+
+  <p>This happens only while you are drawing with snapping switched on. If you import a route file, load a saved route, or draw straight lines, nothing is sent. If the service does not answer, the app falls back to straight lines between your points so you can carry on drawing.</p>
+
+  <h2 data-added="routing-2026-08-05">Your position during a session</h2>
+  <p>While a session is running, CarbPlanner can follow your position: it draws where you are on the map and keeps your fuelling plan in step with how far you have actually come. The app asks for permission the first time you have a route to follow, and only ever for “While Using the App” — never in the background.</p>
+
+  <p>Your position is not uploaded. It is drawn on your device and, if you choose to keep a finished session as a route, saved there and in your own iCloud backup. We never receive it, and we run no server that could.</p>
+
+  <p>One indirect exception, and it is the reason location appears on our App Store privacy label at all: the map fetches tiles for the area you are looking at, so the tile service sees which square was asked for together with your IP address. That reveals roughly where you are, not who you are. See <em>Maps and elevation</em> above.</p>
+
+  <p>You can switch it off at any time from the session screen, or refuse the permission outright. Everything else in the app works without it — the plan then follows the clock instead of your position.</p>
+
   <h2>Product search</h2>
   <p>If you search for a food or drink product by name or barcode, your search text is sent to
   <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener">Open Food Facts</a>, a
@@ -119,8 +137,17 @@
     trace) to help us fix bugs. We do not configure Sentry to collect personal information. See
     <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry's Privacy Policy</a>.</li>
   </ul>
-  <p>Neither service is used for advertising, and we do not sell or share your data with anyone for
-  marketing purposes. We have no third-party advertising SDKs in the app.</p>
+  <p data-added="asa-2026-08-14">We do not sell or share your data with anyone for marketing purposes, we do not build advertising profiles, and we have no third-party advertising SDKs in the app. We do measure our own App Store ads — see <em>Ad measurement</em> below.</p>
+
+  <h2 data-added="asa-2026-08-14">Ad measurement</h2>
+  <p>We run ads for CarbPlanner in the App Store. To know whether they are worth the money, we need to see which ad brought someone to the app — otherwise we are paying blind.</p>
+
+  <p>On first launch the app asks Apple's <a href="https://developer.apple.com/documentation/adservices" target="_blank" rel="noopener">AdServices</a> framework a single question: which Search Ads campaign led to this install. Apple answers with four numbers — a campaign ID, an ad group ID, a keyword ID and a country or region. Nothing else. If you found CarbPlanner on your own, Apple answers "no attribution" and there is nothing to record.</p>
+
+  <p>Those four numbers are attached to the anonymous Aptabase events described above, so we can tell that (for example) a keyword produced ten trials and one subscription. They say nothing about who you are: no name, no email, no device identifier, no advertising identifier, and no permission prompt is involved.</p>
+
+  <p>We use this only to judge our own advertising. We do not target ads at you, we do not build a profile, and the numbers are never sold or passed to anyone beyond Aptabase.</p>
+
 
   <h2>Legal basis, retention and transfers (GDPR)</h2>
   <p>For users in the European Economic Area and the UK:</p>
@@ -136,7 +163,7 @@
     <li><strong>International transfers.</strong> Your iCloud backup is stored by Apple in your own
     account; where Apple stores it is governed by Apple's terms. Sentry is operated from the United
     States, so if crash reporting is enabled, technical crash data may be processed there under the
-    provider's standard safeguards. Aptabase offers EU-based hosting.</li>
+    provider's standard safeguards. Aptabase offers EU-based hosting. Map tiles, elevation data and route snapping are fetched from the third-party services described above: OpenFreeMap and Amazon Web Services, which may serve from outside the EEA, and Valhalla at FOSSGIS e.V. in Germany. Those requests carry your IP address and the coordinates being asked about, and nothing else about you.</li>
   </ul>
 
   <h2>Children</h2>
@@ -173,7 +200,7 @@
   <!-- ===================== SVENSKA ===================== -->
   <div data-lang="sv" data-title="Integritetspolicy — CarbPlanner">
   <h1>Integritetspolicy</h1>
-  <p class="updated">CarbPlanner · Senast uppdaterad 1 augusti 2026</p>
+  <p class="updated">CarbPlanner · Senast uppdaterad 14 augusti 2026</p>
 
   <div class="card">
     <p>CarbPlanner är en planerare för energiintag under uthållighetsträning, byggd för att köras
@@ -220,6 +247,24 @@
 
   <p>Att öppna kartan hämtar rutor automatiskt. Att hämta höjddata är en knapp du trycker på, eftersom det laddar ner flera megabyte. Öppnar du aldrig kartan och hämtar aldrig höjddata lämnar ingenting om din rutt din enhet.</p>
 
+    <h2 data-added="routing-2026-08-05">Att rita en rutt</h2>
+  <p>CarbPlanner kan rita en rutt på kartan. Du sätter ut punkter, och appen låter vägen mellan dem följa väg- och stignätet i stället för att dra en rak linje. Att hitta den vägen klarar inte en telefon på egen hand, så frågan går till en ruttjänst.</p>
+
+  <p>Tjänsten är <a href="https://valhalla.github.io/valhalla/" target="_blank" rel="noopener">Valhalla</a>, som drivs av <a href="https://fossgis.de" target="_blank" rel="noopener">FOSSGIS e.V.</a>, en tysk ideell förening. Den drivs inte av oss, och det finns varken konto eller nyckel inblandat. Varje anrop bär rubriken <code>X-Client-Id: carbplanner.app</code>, som talar om för den som driver servern att trafiken kommer från den här appen — det namnger appen, inte dig.</p>
+
+  <p>Ett anrop innehåller bara koordinaterna för de punkter du satt ut och vilket underlag som ska föredras (landsvägscykel, gravel, mountainbike eller till fots). Det bär inget namn, ingen plan, inga sparade rutter och ingen identifierare. Vi har ingen egen server emellan, så den ritade linjen går direkt dit och vi ser den aldrig. Vad <a href="https://fossgis.de/datenschutzerkl%C3%A4rung/" target="_blank" rel="noopener">FOSSGIS</a> själva loggar står i deras egen integritetsförklaring.</p>
+
+  <p>Det här sker bara medan du ritar med snäppning påslagen. Importerar du en ruttfil, öppnar en sparad rutt eller ritar raka linjer skickas ingenting. Svarar inte tjänsten drar appen raka linjer mellan dina punkter så att du kan fortsätta rita.</p>
+
+  <h2 data-added="routing-2026-08-05">Din position under passet</h2>
+  <p>Under ett pass kan CarbPlanner följa din position: den ritar ut var på kartan du är och håller din intagsplan i takt med hur långt du faktiskt kommit. Appen frågar om lov första gången du har en rutt att följa, och alltid bara för ”när appen används” — aldrig i bakgrunden.</p>
+
+  <p>Positionen laddas inte upp. Den ritas på din enhet och sparas där, plus i din egen iCloud-säkerhetskopia, om du väljer att behålla ett genomfört pass som rutt. Vi får den aldrig, och vi driver ingen server som skulle kunna ta emot den.</p>
+
+  <p>Ett indirekt undantag, och det är skälet till att position alls står på vår integritetsetikett i App Store: kartan hämtar rutor för det område du tittar på, så karttjänsten ser vilken ruta som efterfrågades tillsammans med din IP-adress. Det avslöjar ungefär var du är, inte vem du är. Se <em>Kartor och höjddata</em> ovan.</p>
+
+  <p>Du kan stänga av den när som helst från passets skärm, eller neka behörigheten helt. Allt annat i appen fungerar utan den — planen följer då klockan i stället för din position.</p>
+
   <h2>Produktsökning</h2>
   <p>Om du söker efter en mat- eller dryckesprodukt med namn eller streckkod skickas din söktext till
   <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener">Open Food Facts</a>, en
@@ -254,8 +299,17 @@
     stackspår) för att hjälpa oss rätta fel. Vi konfigurerar inte Sentry att samla in
     personuppgifter. Se <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentrys integritetspolicy</a>.</li>
   </ul>
-  <p>Ingen av tjänsterna används för annonsering, och vi säljer eller delar inte dina uppgifter med
-  någon i marknadsföringssyfte. Vi har inga annons-SDK:er från tredje part i appen.</p>
+  <p data-added="asa-2026-08-14">Vi säljer eller delar inte dina uppgifter med någon i marknadsföringssyfte, vi bygger inga annonsprofiler, och vi har inga annons-SDK:er från tredje part i appen. Däremot mäter vi våra egna annonser i App Store — se <em>Annonsmätning</em> nedan.</p>
+
+  <h2 data-added="asa-2026-08-14">Annonsmätning</h2>
+  <p>Vi annonserar för CarbPlanner i App Store. För att veta om det är värt pengarna behöver vi se vilken annons som förde någon till appen — annars betalar vi i blindo.</p>
+
+  <p>Vid första starten ställer appen en enda fråga till Apples ramverk <a href="https://developer.apple.com/documentation/adservices" target="_blank" rel="noopener">AdServices</a>: vilken Search Ads-kampanj ledde till den här installationen. Apple svarar med fyra nummer — ett kampanj-id, ett annonsgrupps-id, ett sökords-id och ett land eller en region. Inget mer. Hittade du CarbPlanner på egen hand svarar Apple "ingen attribution", och då finns ingenting att registrera.</p>
+
+  <p>De fyra numren hängs på de anonyma Aptabase-händelserna som beskrivs ovan, så att vi kan se att (till exempel) ett sökord gav tio provperioder och en prenumeration. De säger ingenting om vem du är: inget namn, ingen e-post, ingen enhetsidentifierare, ingen annonsidentifierare, och ingen tillåtelseruta är inblandad.</p>
+
+  <p>Vi använder detta enbart för att bedöma vår egen annonsering. Vi riktar inga annonser mot dig, vi bygger ingen profil, och numren säljs aldrig eller lämnas vidare till någon utöver Aptabase.</p>
+
 
   <h2>Rättslig grund, lagring och överföringar (GDPR)</h2>
   <p>För användare inom Europeiska ekonomiska samarbetsområdet och Storbritannien:</p>
@@ -272,7 +326,7 @@
     <li><strong>Internationella överföringar.</strong> Din iCloud-säkerhetskopia lagras av Apple i
     ditt eget konto; var Apple lagrar den omfattas av Apples villkor. Sentry drivs från USA, så om
     kraschrapportering är aktiverad kan tekniska kraschuppgifter behandlas där under leverantörens
-    sedvanliga skyddsåtgärder. Aptabase erbjuder hosting inom EU.</li>
+    sedvanliga skyddsåtgärder. Aptabase erbjuder hosting inom EU. Kartrutor, höjddata och ruttsnäppning hämtas från de tredjepartstjänster som beskrivs ovan: OpenFreeMap och Amazon Web Services, som kan leverera från platser utanför EES, samt Valhalla hos FOSSGIS e.V. i Tyskland. De anropen bär din IP-adress och de koordinater frågan gäller, men ingenting annat om dig.</li>
   </ul>
 
   <h2>Barn</h2>
@@ -309,7 +363,7 @@
   <!-- ===================== ESPAÑOL ===================== -->
   <div data-lang="es" data-title="Política de privacidad — CarbPlanner">
   <h1>Política de privacidad</h1>
-  <p class="updated">CarbPlanner · Última actualización: 1 de agosto de 2026</p>
+  <p class="updated">CarbPlanner · Última actualización: 14 de agosto de 2026</p>
 
   <div class="card">
     <p>CarbPlanner es un planificador de nutrición para deportes de resistencia diseñado para
@@ -357,6 +411,24 @@
 
   <p>Abrir el mapa solicita teselas automáticamente. Obtener la altimetría es un botón que pulsas tú, porque descarga varios megabytes. Si nunca abres el mapa y nunca obtienes la altimetría, nada sobre tu ruta sale de tu dispositivo.</p>
 
+    <h2 data-added="routing-2026-08-05">Dibujar una ruta</h2>
+  <p>CarbPlanner puede dibujar una ruta en el mapa. Tú colocas puntos y la aplicación hace que el trazado entre ellos siga la red de carreteras y senderos en lugar de dibujar una línea recta. Encontrar ese trazado no es algo que un teléfono pueda hacer por sí solo, así que se le pide a un servicio de rutas.</p>
+
+  <p>Ese servicio es <a href="https://valhalla.github.io/valhalla/" target="_blank" rel="noopener">Valhalla</a>, gestionado por <a href="https://fossgis.de" target="_blank" rel="noopener">FOSSGIS e.V.</a>, una asociación sin ánimo de lucro alemana. No lo operamos nosotros y no hay ninguna cuenta ni clave de por medio. Cada petición lleva la cabecera <code>X-Client-Id: carbplanner.app</code>, que indica a quien opera el servidor que el tráfico procede de esta aplicación: nombra a la aplicación, no a ti.</p>
+
+  <p>Una petición contiene únicamente las coordenadas de los puntos que has colocado y qué superficie preferir (bicicleta de carretera, gravel, bicicleta de montaña o a pie). No lleva ningún nombre, ningún plan, ninguna ruta guardada ni ningún identificador. No tenemos ningún servidor propio en medio, así que la línea dibujada llega directamente a ellos y nosotros nunca la vemos. Lo que <a href="https://fossgis.de/datenschutzerkl%C3%A4rung/" target="_blank" rel="noopener">FOSSGIS</a> registra por su parte se describe en su propia declaración de privacidad.</p>
+
+  <p>Esto solo ocurre mientras dibujas con el ajuste automático activado. Si importas un archivo de ruta, abres una ruta guardada o dibujas líneas rectas, no se envía nada. Si el servicio no responde, la aplicación traza líneas rectas entre tus puntos para que puedas seguir dibujando.</p>
+
+  <h2 data-added="routing-2026-08-05">Tu ubicación durante la sesión</h2>
+  <p>Durante una sesión, CarbPlanner puede seguir tu ubicación: dibuja dónde estás en el mapa y mantiene tu plan de alimentación al ritmo de lo que realmente has avanzado. La app pide permiso la primera vez que tienes una ruta que seguir, y siempre solo para “mientras se usa la app”, nunca en segundo plano.</p>
+
+  <p>Tu ubicación no se sube. Se dibuja en tu dispositivo y, si decides guardar una sesión terminada como ruta, queda ahí y en tu propia copia de seguridad de iCloud. Nosotros nunca la recibimos, y no tenemos ningún servidor que pudiera hacerlo.</p>
+
+  <p>Una excepción indirecta, y es la razón por la que la ubicación aparece en nuestra etiqueta de privacidad de la App Store: el mapa descarga teselas de la zona que estás mirando, así que el servicio de mapas ve qué cuadro se pidió junto con tu dirección IP. Eso revela aproximadamente dónde estás, no quién eres. Consulta <em>Mapas y altimetría</em> más arriba.</p>
+
+  <p>Puedes desactivarla cuando quieras desde la pantalla de la sesión, o denegar el permiso por completo. Todo lo demás en la app funciona sin ella: el plan sigue entonces el reloj en lugar de tu ubicación.</p>
+
   <h2>Búsqueda de productos</h2>
   <p>Si buscas un producto de comida o bebida por nombre o código de barras, tu texto de búsqueda se
   envía a <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener">Open Food Facts</a>,
@@ -395,8 +467,17 @@
     información personal. Consulta la
     <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Política de privacidad de Sentry</a>.</li>
   </ul>
-  <p>Ninguno de los servicios se usa para publicidad, y no vendemos ni compartimos tus datos con
-  nadie con fines de marketing. No tenemos SDK de publicidad de terceros en la app.</p>
+  <p data-added="asa-2026-08-14">No vendemos ni compartimos tus datos con nadie con fines de marketing, no creamos perfiles publicitarios y no tenemos SDK de publicidad de terceros en la app. Sí medimos nuestros propios anuncios en la App Store: consulta <em>Medición de anuncios</em> más abajo.</p>
+
+  <h2 data-added="asa-2026-08-14">Medición de anuncios</h2>
+  <p>Publicamos anuncios de CarbPlanner en la App Store. Para saber si merecen la pena, necesitamos ver qué anuncio trajo a alguien a la app; de lo contrario pagamos a ciegas.</p>
+
+  <p>En el primer arranque, la app hace una única pregunta al framework <a href="https://developer.apple.com/documentation/adservices" target="_blank" rel="noopener">AdServices</a> de Apple: qué campaña de Search Ads originó esta instalación. Apple responde con cuatro números: un ID de campaña, un ID de grupo de anuncios, un ID de palabra clave y un país o región. Nada más. Si encontraste CarbPlanner por tu cuenta, Apple responde "sin atribución" y no hay nada que registrar.</p>
+
+  <p>Esos cuatro números se adjuntan a los eventos anónimos de Aptabase descritos arriba, para que podamos ver que (por ejemplo) una palabra clave generó diez pruebas y una suscripción. No dicen nada sobre quién eres: ni nombre, ni correo, ni identificador de dispositivo, ni identificador publicitario, y no interviene ninguna solicitud de permiso.</p>
+
+  <p>Usamos esto únicamente para valorar nuestra propia publicidad. No te mostramos anuncios dirigidos, no creamos ningún perfil, y los números nunca se venden ni se ceden a nadie más allá de Aptabase.</p>
+
 
   <h2>Base jurídica, conservación y transferencias (RGPD)</h2>
   <p>Para usuarios del Espacio Económico Europeo y el Reino Unido:</p>
@@ -415,7 +496,7 @@
     Apple en tu propia cuenta; dónde la almacena Apple se rige por los términos de Apple. Sentry opera
     desde Estados Unidos, así que, si los informes de errores están activados, los datos técnicos de
     fallos pueden tratarse allí bajo las garantías estándar del proveedor. Aptabase ofrece alojamiento
-    en la UE.</li>
+    en la UE. Las teselas de mapa, la altimetría y el ajuste de rutas se obtienen de los servicios de terceros descritos más arriba: OpenFreeMap y Amazon Web Services, que pueden servir desde fuera del EEE, y Valhalla en FOSSGIS e.V. en Alemania. Esas peticiones llevan tu dirección IP y las coordenadas consultadas, y nada más sobre ti.</li>
   </ul>
 
   <h2>Menores</h2>
@@ -453,7 +534,7 @@
   <!-- ===================== FRANÇAIS ===================== -->
   <div data-lang="fr" data-title="Politique de confidentialité — CarbPlanner">
   <h1>Politique de confidentialité</h1>
-  <p class="updated">CarbPlanner · Dernière mise à jour : 1er août 2026</p>
+  <p class="updated">CarbPlanner · Dernière mise à jour : 14 août 2026</p>
 
   <div class="card">
     <p>CarbPlanner est un planificateur de nutrition pour les sports d'endurance conçu pour
@@ -502,6 +583,24 @@
 
   <p>Ouvrir la carte demande des tuiles automatiquement. Récupérer l'altitude est un bouton que vous actionnez, car cela télécharge plusieurs mégaoctets. Si vous n'ouvrez jamais la carte et ne récupérez jamais l'altitude, rien concernant votre itinéraire ne quitte votre appareil.</p>
 
+    <h2 data-added="routing-2026-08-05">Tracer un itinéraire</h2>
+  <p>CarbPlanner peut tracer un itinéraire sur la carte. Vous placez des points et l'application fait suivre au tracé le réseau de routes et de sentiers au lieu de tirer une ligne droite. Trouver ce tracé dépasse ce qu'un téléphone peut faire seul : la question est donc posée à un service de calcul d'itinéraire.</p>
+
+  <p>Ce service est <a href="https://valhalla.github.io/valhalla/" target="_blank" rel="noopener">Valhalla</a>, exploité par <a href="https://fossgis.de" target="_blank" rel="noopener">FOSSGIS e.V.</a>, une association allemande à but non lucratif. Il n'est pas exploité par nous, et il n'y a ni compte ni clé. Chaque requête porte l'en-tête <code>X-Client-Id: carbplanner.app</code>, qui indique à l'exploitant que le trafic provient de cette application — cela nomme l'application, pas vous.</p>
+
+  <p>Une requête ne contient que les coordonnées des points que vous avez placés et la surface à privilégier (vélo de route, gravel, VTT ou à pied). Elle ne porte aucun nom, aucun plan, aucun itinéraire enregistré et aucun identifiant. Nous n'avons aucun serveur à nous entre les deux : le tracé leur parvient directement et nous ne le voyons jamais. Ce que <a href="https://fossgis.de/datenschutzerkl%C3%A4rung/" target="_blank" rel="noopener">FOSSGIS</a> enregistre de son côté est décrit dans sa propre déclaration de confidentialité.</p>
+
+  <p>Cela ne se produit que pendant que vous tracez avec l'aimantation activée. Si vous importez un fichier d'itinéraire, ouvrez un itinéraire enregistré ou tracez des lignes droites, rien n'est envoyé. Si le service ne répond pas, l'application relie vos points par des lignes droites afin que vous puissiez continuer à tracer.</p>
+
+  <h2 data-added="routing-2026-08-05">Votre position pendant une séance</h2>
+  <p>Pendant une séance, CarbPlanner peut suivre votre position : il affiche où vous êtes sur la carte et garde votre plan nutritionnel au rythme de votre progression réelle. L'app demande l'autorisation la première fois que vous avez un itinéraire à suivre, et uniquement en mode « lors de l'utilisation » — jamais en arrière-plan.</p>
+
+  <p>Votre position n'est pas téléversée. Elle est tracée sur votre appareil et, si vous choisissez de conserver une séance terminée comme itinéraire, enregistrée là et dans votre propre sauvegarde iCloud. Nous ne la recevons jamais, et nous n'exploitons aucun serveur qui le pourrait.</p>
+
+  <p>Une exception indirecte, et c'est la raison pour laquelle la position figure sur notre étiquette de confidentialité App Store : la carte récupère des tuiles pour la zone que vous regardez, si bien que le service voit quel carré a été demandé, avec votre adresse IP. Cela révèle approximativement où vous êtes, pas qui vous êtes. Voir <em>Cartes et altitude</em> ci-dessus.</p>
+
+  <p>Vous pouvez la désactiver à tout moment depuis l'écran de la séance, ou refuser l'autorisation. Tout le reste fonctionne sans elle : le plan suit alors l'horloge plutôt que votre position.</p>
+
   <h2>Recherche de produits</h2>
   <p>Si vous recherchez un produit alimentaire ou une boisson par nom ou code-barres, votre texte de
   recherche est envoyé à
@@ -542,8 +641,17 @@
     pour collecter des informations personnelles. Voir la
     <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">politique de confidentialité de Sentry</a>.</li>
   </ul>
-  <p>Aucun de ces services n'est utilisé à des fins publicitaires, et nous ne vendons ni ne partageons
-  vos données avec quiconque à des fins marketing. Nous n'avons aucun SDK publicitaire tiers dans l'app.</p>
+  <p data-added="asa-2026-08-14">Nous ne vendons ni ne partageons vos données avec quiconque à des fins marketing, nous ne constituons aucun profil publicitaire et nous n'avons aucun SDK publicitaire tiers dans l'app. En revanche, nous mesurons nos propres publicités sur l'App Store — voir <em>Mesure publicitaire</em> ci-dessous.</p>
+
+  <h2 data-added="asa-2026-08-14">Mesure publicitaire</h2>
+  <p>Nous diffusons des publicités pour CarbPlanner sur l'App Store. Pour savoir si elles valent leur coût, nous devons voir quelle annonce a amené quelqu'un vers l'app — sinon nous payons à l'aveugle.</p>
+
+  <p>Au premier lancement, l'app pose une seule question au framework <a href="https://developer.apple.com/documentation/adservices" target="_blank" rel="noopener">AdServices</a> d'Apple : quelle campagne Search Ads est à l'origine de cette installation. Apple répond par quatre nombres — un identifiant de campagne, un identifiant de groupe d'annonces, un identifiant de mot-clé et un pays ou une région. Rien d'autre. Si vous avez trouvé CarbPlanner par vous-même, Apple répond « aucune attribution » et il n'y a rien à enregistrer.</p>
+
+  <p>Ces quatre nombres sont joints aux événements anonymes d'Aptabase décrits ci-dessus, afin que nous puissions constater que (par exemple) un mot-clé a produit dix essais et un abonnement. Ils ne disent rien sur qui vous êtes : ni nom, ni e-mail, ni identifiant d'appareil, ni identifiant publicitaire, et aucune demande d'autorisation n'intervient.</p>
+
+  <p>Nous utilisons cela uniquement pour juger notre propre publicité. Nous ne vous ciblons pas avec des annonces, nous ne constituons aucun profil, et ces nombres ne sont jamais vendus ni transmis à quiconque au-delà d'Aptabase.</p>
+
 
   <h2>Base légale, conservation et transferts (RGPD)</h2>
   <p>Pour les utilisateurs de l'Espace économique européen et du Royaume-Uni :</p>
@@ -562,7 +670,7 @@
     votre propre compte ; l'endroit où Apple la stocke est régi par les conditions d'Apple. Sentry est
     exploité depuis les États-Unis, donc si les rapports de plantage sont activés, les données
     techniques de plantage peuvent y être traitées sous les garanties standard du fournisseur.
-    Aptabase propose un hébergement dans l'UE.</li>
+    Aptabase propose un hébergement dans l'UE. Les tuiles de carte, les altitudes et l'aimantation des itinéraires proviennent des services tiers décrits ci-dessus : OpenFreeMap et Amazon Web Services, qui peuvent servir depuis l'extérieur de l'EEE, et Valhalla chez FOSSGIS e.V. en Allemagne. Ces requêtes portent votre adresse IP et les coordonnées concernées, et rien d'autre à votre sujet.</li>
   </ul>
 
   <h2>Enfants</h2>
@@ -601,7 +709,7 @@
   <!-- ===================== ITALIANO ===================== -->
   <div data-lang="it" data-title="Informativa sulla privacy — CarbPlanner">
   <h1>Informativa sulla privacy</h1>
-  <p class="updated">CarbPlanner · Ultimo aggiornamento: 1 agosto 2026</p>
+  <p class="updated">CarbPlanner · Ultimo aggiornamento: 14 agosto 2026</p>
 
   <div class="card">
     <p>CarbPlanner è un pianificatore di alimentazione per gli sport di resistenza, progettato per
@@ -649,6 +757,24 @@
 
   <p>Aprire la mappa richiede tessere automaticamente. Scaricare l'altimetria è un pulsante che premi tu, perché scarica diversi megabyte. Se non apri mai la mappa e non scarichi mai l'altimetria, nulla del tuo percorso lascia il tuo dispositivo.</p>
 
+    <h2 data-added="routing-2026-08-05">Disegnare un percorso</h2>
+  <p>CarbPlanner può disegnare un percorso sulla mappa. Tu posizioni dei punti e l'app fa seguire al tracciato la rete di strade e sentieri invece di tirare una linea retta. Trovare quel tracciato non è qualcosa che un telefono possa fare da solo, perciò la richiesta va a un servizio di instradamento.</p>
+
+  <p>Il servizio è <a href="https://valhalla.github.io/valhalla/" target="_blank" rel="noopener">Valhalla</a>, gestito da <a href="https://fossgis.de" target="_blank" rel="noopener">FOSSGIS e.V.</a>, un'associazione tedesca senza scopo di lucro. Non è gestito da noi e non sono coinvolti né account né chiavi. Ogni richiesta porta l'intestazione <code>X-Client-Id: carbplanner.app</code>, che comunica a chi gestisce il server che il traffico proviene da questa app: nomina l'app, non te.</p>
+
+  <p>Una richiesta contiene soltanto le coordinate dei punti che hai posizionato e quale fondo preferire (bici da strada, gravel, mountain bike o a piedi). Non porta alcun nome, alcun piano, alcun percorso salvato né alcun identificativo. Non abbiamo alcun server nostro nel mezzo, quindi la linea disegnata arriva direttamente a loro e noi non la vediamo mai. Ciò che <a href="https://fossgis.de/datenschutzerkl%C3%A4rung/" target="_blank" rel="noopener">FOSSGIS</a> registra per conto proprio è descritto nella loro informativa sulla privacy.</p>
+
+  <p>Questo avviene solo mentre disegni con l'aggancio attivo. Se importi un file di percorso, apri un percorso salvato o disegni linee rette, non viene inviato nulla. Se il servizio non risponde, l'app traccia linee rette fra i tuoi punti così puoi continuare a disegnare.</p>
+
+  <h2 data-added="routing-2026-08-05">La tua posizione durante la sessione</h2>
+  <p>Durante una sessione, CarbPlanner può seguire la tua posizione: disegna dove sei sulla mappa e mantiene il piano di alimentazione al passo con quanto hai davvero percorso. L'app chiede il permesso la prima volta che hai un percorso da seguire, e sempre solo per “mentre usi l'app”, mai in background.</p>
+
+  <p>La tua posizione non viene caricata. Viene disegnata sul dispositivo e, se scegli di conservare una sessione conclusa come percorso, salvata lì e nel tuo backup iCloud. Noi non la riceviamo mai, e non abbiamo alcun server che potrebbe farlo.</p>
+
+  <p>Un'eccezione indiretta, ed è il motivo per cui la posizione compare sulla nostra etichetta privacy dell'App Store: la mappa scarica tessere per l'area che stai guardando, quindi il servizio vede quale quadrato è stato richiesto insieme al tuo indirizzo IP. Questo rivela all'incirca dove sei, non chi sei. Vedi <em>Mappe e altimetria</em> sopra.</p>
+
+  <p>Puoi disattivarla quando vuoi dalla schermata della sessione, o negare del tutto il permesso. Tutto il resto funziona senza: il piano segue allora l'orologio invece della tua posizione.</p>
+
   <h2>Ricerca prodotti</h2>
   <p>Se cerchi un prodotto alimentare o una bevanda per nome o codice a barre, il testo della tua
   ricerca viene inviato a
@@ -688,8 +814,17 @@
     informazioni personali. Consulta l'
     <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Informativa sulla privacy di Sentry</a>.</li>
   </ul>
-  <p>Nessuno dei due servizi è usato per la pubblicità e non vendiamo né condividiamo i tuoi dati con
-  nessuno a fini di marketing. Non abbiamo SDK pubblicitari di terze parti nell'app.</p>
+  <p data-added="asa-2026-08-14">Non vendiamo né condividiamo i tuoi dati con nessuno a fini di marketing, non creiamo profili pubblicitari e non abbiamo SDK pubblicitari di terze parti nell'app. Misuriamo però i nostri annunci sull'App Store: vedi <em>Misurazione degli annunci</em> più sotto.</p>
+
+  <h2 data-added="asa-2026-08-14">Misurazione degli annunci</h2>
+  <p>Pubblichiamo annunci per CarbPlanner sull'App Store. Per sapere se valgono la spesa dobbiamo vedere quale annuncio ha portato qualcuno all'app, altrimenti paghiamo alla cieca.</p>
+
+  <p>Al primo avvio l'app pone una sola domanda al framework <a href="https://developer.apple.com/documentation/adservices" target="_blank" rel="noopener">AdServices</a> di Apple: quale campagna Search Ads ha originato questa installazione. Apple risponde con quattro numeri — un ID campagna, un ID gruppo di annunci, un ID parola chiave e un paese o una regione. Nient'altro. Se hai trovato CarbPlanner da solo, Apple risponde "nessuna attribuzione" e non c'è nulla da registrare.</p>
+
+  <p>Questi quattro numeri vengono allegati agli eventi anonimi di Aptabase descritti sopra, così possiamo vedere che (per esempio) una parola chiave ha prodotto dieci prove e un abbonamento. Non dicono nulla su chi sei: nessun nome, nessuna email, nessun identificativo del dispositivo, nessun identificativo pubblicitario, e non è coinvolta alcuna richiesta di autorizzazione.</p>
+
+  <p>Usiamo questo solo per valutare la nostra pubblicità. Non ti mostriamo annunci mirati, non creiamo alcun profilo, e i numeri non vengono mai venduti né trasmessi a nessuno oltre ad Aptabase.</p>
+
 
   <h2>Base giuridica, conservazione e trasferimenti (GDPR)</h2>
   <p>Per gli utenti dello Spazio economico europeo e del Regno Unito:</p>
@@ -708,7 +843,7 @@
     nel tuo account; il luogo in cui Apple lo archivia è regolato dai termini di Apple. Sentry è
     gestito dagli Stati Uniti, quindi se la segnalazione errori è attiva, i dati tecnici di crash
     potrebbero essere trattati lì con le garanzie standard del fornitore. Aptabase offre hosting
-    nell'UE.</li>
+    nell'UE. Le tessere di mappa, l'altimetria e l'aggancio dei percorsi provengono dai servizi di terze parti descritti sopra: OpenFreeMap e Amazon Web Services, che possono servire da fuori dello SEE, e Valhalla presso FOSSGIS e.V. in Germania. Quelle richieste portano il tuo indirizzo IP e le coordinate interessate, e nient'altro su di te.</li>
   </ul>
 
   <h2>Minori</h2>
@@ -746,7 +881,7 @@
   <!-- ===================== DEUTSCH ===================== -->
   <div data-lang="de" data-title="Datenschutzrichtlinie — CarbPlanner">
   <h1>Datenschutzrichtlinie</h1>
-  <p class="updated">CarbPlanner · Zuletzt aktualisiert: 1. August 2026</p>
+  <p class="updated">CarbPlanner · Zuletzt aktualisiert: 14. August 2026</p>
 
   <div class="card">
     <p>CarbPlanner ist ein Verpflegungsplaner für den Ausdauersport, der fast vollständig auf deinem
@@ -795,6 +930,24 @@
 
   <p>Beim Öffnen der Karte werden Kacheln automatisch angefragt. Das Laden der Höhendaten ist eine Schaltfläche, die du drückst, denn dabei werden mehrere Megabyte geladen. Öffnest du die Karte nie und lädst nie Höhendaten, verlässt nichts über deine Route dein Gerät.</p>
 
+    <h2 data-added="routing-2026-08-05">Eine Route zeichnen</h2>
+  <p>CarbPlanner kann eine Route auf der Karte zeichnen. Du setzt Punkte, und die App lässt den Weg dazwischen dem Straßen- und Wegenetz folgen, statt eine gerade Linie zu ziehen. Diesen Weg zu finden schafft ein Telefon nicht allein, deshalb wird ein Routing-Dienst gefragt.</p>
+
+  <p>Dieser Dienst ist <a href="https://valhalla.github.io/valhalla/" target="_blank" rel="noopener">Valhalla</a>, betrieben vom <a href="https://fossgis.de" target="_blank" rel="noopener">FOSSGIS e.V.</a>, einem deutschen gemeinnützigen Verein. Er wird nicht von uns betrieben, und es sind weder Konto noch Schlüssel im Spiel. Jede Anfrage trägt den Header <code>X-Client-Id: carbplanner.app</code>, der dem Betreiber sagt, dass der Verkehr aus dieser App kommt — das benennt die App, nicht dich.</p>
+
+  <p>Eine Anfrage enthält nur die Koordinaten der von dir gesetzten Punkte und welcher Untergrund bevorzugt werden soll (Rennrad, Gravel, Mountainbike oder zu Fuß). Sie trägt keinen Namen, keinen Plan, keine gespeicherten Routen und keine Kennung. Wir haben keinen eigenen Server dazwischen, die gezeichnete Linie geht also direkt dorthin und wir sehen sie nie. Was <a href="https://fossgis.de/datenschutzerkl%C3%A4rung/" target="_blank" rel="noopener">FOSSGIS</a> selbst protokolliert, steht in deren eigener Datenschutzerklärung.</p>
+
+  <p>Das geschieht nur, solange du mit eingeschaltetem Einrasten zeichnest. Importierst du eine Routendatei, öffnest eine gespeicherte Route oder zeichnest gerade Linien, wird nichts gesendet. Antwortet der Dienst nicht, zieht die App gerade Linien zwischen deinen Punkten, damit du weiterzeichnen kannst.</p>
+
+  <h2 data-added="routing-2026-08-05">Dein Standort während einer Einheit</h2>
+  <p>Während einer Einheit kann CarbPlanner deinem Standort folgen: die App zeichnet, wo du auf der Karte bist, und hält deinen Verpflegungsplan mit deinem tatsächlichen Fortschritt Schritt. Sie fragt beim ersten Mal, wenn es eine Route zu folgen gibt, und immer nur für „Bei Verwendung der App“ — nie im Hintergrund.</p>
+
+  <p>Dein Standort wird nicht hochgeladen. Er wird auf deinem Gerät gezeichnet und, wenn du eine beendete Einheit als Route behalten willst, dort und in deinem eigenen iCloud-Backup gespeichert. Wir erhalten ihn nie und betreiben keinen Server, der das könnte.</p>
+
+  <p>Eine indirekte Ausnahme, und sie ist der Grund, warum Standort überhaupt auf unserem App-Store-Datenschutzlabel steht: die Karte lädt Kacheln für den Bereich, den du ansiehst, also sieht der Kartendienst, welches Quadrat angefragt wurde, zusammen mit deiner IP-Adresse. Das verrät ungefähr, wo du bist, nicht wer du bist. Siehe <em>Karten und Höhendaten</em> oben.</p>
+
+  <p>Du kannst das jederzeit im Einheiten-Bildschirm abschalten oder die Berechtigung ganz verweigern. Alles andere funktioniert ohne sie — der Plan folgt dann der Uhr statt deinem Standort.</p>
+
   <h2>Produktsuche</h2>
   <p>Wenn du ein Lebensmittel oder Getränk nach Namen oder Barcode suchst, wird dein Suchtext an
   <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener">Open Food Facts</a>, eine
@@ -834,8 +987,17 @@
     personenbezogene Daten erfasst. Siehe
     <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentrys Datenschutzrichtlinie</a>.</li>
   </ul>
-  <p>Keiner der Dienste wird für Werbung genutzt, und wir verkaufen oder teilen deine Daten mit
-  niemandem zu Marketingzwecken. Wir haben keine Werbe-SDKs von Drittanbietern in der App.</p>
+  <p data-added="asa-2026-08-14">Wir verkaufen oder teilen deine Daten mit niemandem zu Marketingzwecken, wir erstellen keine Werbeprofile, und wir haben keine Werbe-SDKs von Drittanbietern in der App. Wir messen allerdings unsere eigenen Anzeigen im App Store — siehe <em>Anzeigenmessung</em> weiter unten.</p>
+
+  <h2 data-added="asa-2026-08-14">Anzeigenmessung</h2>
+  <p>Wir schalten Anzeigen für CarbPlanner im App Store. Um zu wissen, ob sie ihr Geld wert sind, müssen wir sehen, welche Anzeige jemanden zur App gebracht hat — sonst zahlen wir blind.</p>
+
+  <p>Beim ersten Start stellt die App Apples Framework <a href="https://developer.apple.com/documentation/adservices" target="_blank" rel="noopener">AdServices</a> genau eine Frage: Welche Search-Ads-Kampagne hat zu dieser Installation geführt? Apple antwortet mit vier Zahlen — einer Kampagnen-ID, einer Anzeigengruppen-ID, einer Keyword-ID und einem Land beziehungsweise einer Region. Mehr nicht. Hast du CarbPlanner selbst gefunden, antwortet Apple „keine Attribution", und es gibt nichts aufzuzeichnen.</p>
+
+  <p>Diese vier Zahlen werden an die oben beschriebenen anonymen Aptabase-Ereignisse angehängt, damit wir erkennen können, dass (zum Beispiel) ein Keyword zehn Testphasen und ein Abonnement gebracht hat. Sie sagen nichts darüber aus, wer du bist: kein Name, keine E-Mail, keine Gerätekennung, keine Werbekennung, und es ist keine Berechtigungsabfrage beteiligt.</p>
+
+  <p>Wir nutzen das ausschließlich, um unsere eigene Werbung zu beurteilen. Wir richten keine Anzeigen auf dich aus, wir erstellen kein Profil, und die Zahlen werden nie verkauft oder an jemanden außerhalb von Aptabase weitergegeben.</p>
+
 
   <h2>Rechtsgrundlage, Speicherung und Übermittlungen (DSGVO)</h2>
   <p>Für Nutzer im Europäischen Wirtschaftsraum und im Vereinigten Königreich:</p>
@@ -854,7 +1016,7 @@
     eigenen Konto gespeichert; wo Apple es speichert, richtet sich nach den Bedingungen von Apple.
     Sentry wird aus den Vereinigten Staaten betrieben, sodass technische Absturzdaten bei aktivierter
     Absturzberichterstattung dort unter den üblichen Schutzmaßnahmen des Anbieters verarbeitet werden
-    können. Aptabase bietet Hosting in der EU an.</li>
+    können. Aptabase bietet Hosting in der EU an. Kartenkacheln, Höhendaten und das Einrasten von Routen werden von den oben beschriebenen Drittdiensten geladen: OpenFreeMap und Amazon Web Services, die auch von außerhalb des EWR ausliefern können, sowie Valhalla beim FOSSGIS e.V. in Deutschland. Diese Anfragen tragen deine IP-Adresse und die betreffenden Koordinaten, sonst nichts über dich.</li>
   </ul>
 
   <h2>Kinder</h2>
@@ -892,7 +1054,7 @@
   <!-- ===================== NEDERLANDS ===================== -->
   <div data-lang="nl" data-title="Privacybeleid — CarbPlanner">
   <h1>Privacybeleid</h1>
-  <p class="updated">CarbPlanner · Laatst bijgewerkt op 1 augustus 2026</p>
+  <p class="updated">CarbPlanner · Laatst bijgewerkt op 14 augustus 2026</p>
 
   <div class="card">
     <p>CarbPlanner is een planner voor sportvoeding bij duursport, gebouwd om vrijwel volledig op je
@@ -941,6 +1103,24 @@
 
   <p>Het openen van de kaart vraagt automatisch tegels op. Hoogtegegevens ophalen is een knop die jij indrukt, want dat downloadt enkele megabytes. Open je de kaart nooit en haal je nooit hoogtegegevens op, dan verlaat er niets over je route je apparaat.</p>
 
+    <h2 data-added="routing-2026-08-05">Een route tekenen</h2>
+  <p>CarbPlanner kan een route op de kaart tekenen. Jij zet punten en de app laat het tracé daartussen het wegen- en padennetwerk volgen in plaats van een rechte lijn te trekken. Dat tracé vinden kan een telefoon niet zelf, dus wordt het gevraagd aan een routeringsdienst.</p>
+
+  <p>Die dienst is <a href="https://valhalla.github.io/valhalla/" target="_blank" rel="noopener">Valhalla</a>, beheerd door <a href="https://fossgis.de" target="_blank" rel="noopener">FOSSGIS e.V.</a>, een Duitse vereniging zonder winstoogmerk. Hij wordt niet door ons beheerd en er komt geen account of sleutel aan te pas. Elk verzoek draagt de header <code>X-Client-Id: carbplanner.app</code>, die de beheerder vertelt dat het verkeer van deze app komt — dat benoemt de app, niet jou.</p>
+
+  <p>Een verzoek bevat alleen de coördinaten van de punten die je hebt gezet en welke ondergrond de voorkeur heeft (racefiets, gravel, mountainbike of te voet). Het draagt geen naam, geen plan, geen opgeslagen routes en geen identificatie. We hebben geen eigen server ertussen, dus de getekende lijn gaat rechtstreeks daarheen en wij zien hem nooit. Wat <a href="https://fossgis.de/datenschutzerkl%C3%A4rung/" target="_blank" rel="noopener">FOSSGIS</a> zelf vastlegt staat in hun eigen privacyverklaring.</p>
+
+  <p>Dit gebeurt alleen terwijl je tekent met vastklikken aan. Importeer je een routebestand, open je een opgeslagen route of teken je rechte lijnen, dan wordt er niets verstuurd. Antwoordt de dienst niet, dan trekt de app rechte lijnen tussen je punten zodat je verder kunt tekenen.</p>
+
+  <h2 data-added="routing-2026-08-05">Je locatie tijdens een sessie</h2>
+  <p>Tijdens een sessie kan CarbPlanner je locatie volgen: de app tekent waar je op de kaart bent en houdt je voedingsplan gelijk met hoe ver je werkelijk bent. Hij vraagt toestemming de eerste keer dat er een route te volgen is, en altijd alleen voor „tijdens gebruik van de app” — nooit op de achtergrond.</p>
+
+  <p>Je locatie wordt niet geüpload. Hij wordt op je apparaat getekend en, als je een afgeronde sessie als route wilt bewaren, daar en in je eigen iCloud-back-up opgeslagen. Wij ontvangen hem nooit en hebben geen server die dat zou kunnen.</p>
+
+  <p>Eén indirecte uitzondering, en die is de reden dat locatie überhaupt op ons App Store-privacylabel staat: de kaart haalt tegels op voor het gebied waar je naar kijkt, dus de kaartdienst ziet welk vierkant is opgevraagd, samen met je IP-adres. Dat verraadt ongeveer waar je bent, niet wie je bent. Zie <em>Kaarten en hoogtegegevens</em> hierboven.</p>
+
+  <p>Je kunt het altijd uitzetten vanuit het sessiescherm, of de toestemming helemaal weigeren. Al het andere werkt zonder: het plan volgt dan de klok in plaats van je locatie.</p>
+
   <h2>Producten zoeken</h2>
   <p>Als je een voedings- of drankproduct zoekt op naam of barcode, wordt je zoektekst verzonden naar
   <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener">Open Food Facts</a>, een
@@ -978,8 +1158,17 @@
     trace) om ons te helpen bugs op te lossen. Wij configureren Sentry niet om persoonsgegevens te
     verzamelen. Zie <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">het privacybeleid van Sentry</a>.</li>
   </ul>
-  <p>Geen van beide diensten wordt gebruikt voor advertenties, en wij verkopen of delen je gegevens
-  met niemand voor marketingdoeleinden. Er zitten geen advertentie-SDK's van derden in de app.</p>
+  <p data-added="asa-2026-08-14">Wij verkopen of delen je gegevens met niemand voor marketingdoeleinden, wij bouwen geen advertentieprofielen op en er zitten geen advertentie-SDK's van derden in de app. We meten wel onze eigen advertenties in de App Store — zie <em>Advertentiemeting</em> hieronder.</p>
+
+  <h2 data-added="asa-2026-08-14">Advertentiemeting</h2>
+  <p>We adverteren voor CarbPlanner in de App Store. Om te weten of dat het geld waard is, moeten we zien welke advertentie iemand naar de app bracht — anders betalen we blind.</p>
+
+  <p>Bij de eerste start stelt de app één vraag aan Apples framework <a href="https://developer.apple.com/documentation/adservices" target="_blank" rel="noopener">AdServices</a>: welke Search Ads-campagne heeft tot deze installatie geleid. Apple antwoordt met vier nummers — een campagne-ID, een advertentiegroep-ID, een zoekwoord-ID en een land of regio. Meer niet. Heb je CarbPlanner zelf gevonden, dan antwoordt Apple "geen attributie" en valt er niets vast te leggen.</p>
+
+  <p>Die vier nummers worden gekoppeld aan de hierboven beschreven anonieme Aptabase-gebeurtenissen, zodat we kunnen zien dat (bijvoorbeeld) een zoekwoord tien proefperiodes en één abonnement opleverde. Ze zeggen niets over wie je bent: geen naam, geen e-mail, geen apparaat-ID, geen advertentie-ID, en er komt geen toestemmingsvraag aan te pas.</p>
+
+  <p>We gebruiken dit uitsluitend om onze eigen advertenties te beoordelen. We richten geen advertenties op je, we bouwen geen profiel op, en de nummers worden nooit verkocht of doorgegeven aan iemand buiten Aptabase.</p>
+
 
   <h2>Rechtsgrond, bewaring en doorgiften (AVG)</h2>
   <p>Voor gebruikers in de Europese Economische Ruimte en het Verenigd Koninkrijk:</p>
@@ -998,7 +1187,7 @@
     account opgeslagen; waar Apple hem opslaat valt onder de voorwaarden van Apple. Sentry opereert
     vanuit de Verenigde Staten, dus als crashrapportage is ingeschakeld kunnen technische
     crashgegevens daar worden verwerkt onder de standaardwaarborgen van de aanbieder. Aptabase biedt
-    hosting binnen de EU.</li>
+    hosting binnen de EU. Kaarttegels, hoogtegegevens en het vastklikken van routes worden opgehaald bij de hierboven beschreven diensten van derden: OpenFreeMap en Amazon Web Services, die ook van buiten de EER kunnen leveren, en Valhalla bij FOSSGIS e.V. in Duitsland. Die verzoeken dragen je IP-adres en de betreffende coördinaten, en verder niets over jou.</li>
   </ul>
 
   <h2>Kinderen</h2>
