@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarbPlanner</title>
+<link rel="canonical" href="https://carbplanner.app/pass.html">
+<meta name="robots" content="noindex">
+<style>
+  :root{color-scheme:light dark;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    max-width:520px;margin:0 auto;padding:64px 20px 80px;line-height:1.6;
+    color:#1C1528;background:#F6F4FA;text-align:center;}
+  h1{font-size:24px;margin:0 0 8px;}
+  p{font-size:15px;color:#6b6478;margin:0 0 24px;}
+  .btn{display:block;background:#4A3B7A;color:#fff;text-decoration:none;
+    border-radius:14px;padding:16px 20px;font-size:16px;margin:0 0 14px;}
+  .alt{font-size:14px;}
+  a{color:#4A3B7A;}
+  .note{font-size:12.5px;color:#8A7E72;margin-top:40px;}
+  .hidden{display:none;}
+  @media (prefers-color-scheme: dark){
+    body{background:#151020;color:#EDE8F5;}
+    p{color:#9d94b5;}
+    a{color:#B7A6F0;}
+    .btn{background:#7C6BC4;color:#fff;}
+    .note{color:#7d7490;}
+  }
+</style>
+</head>
+<body>
+  <h1 id="title"></h1>
+  <p id="lead"></p>
+  <a class="btn hidden" id="open" href="#"></a>
+  <p class="alt"><a id="get" href="https://apps.apple.com/app/id6788753507"></a></p>
+  <p class="note" id="note"></p>
+
+<script>
+(function(){
+  var L = {"en":{"title":"A shared session","lead":"Someone shared a CarbPlanner session with you.","open":"Open in CarbPlanner","get":"Don't have CarbPlanner? Get it on the App Store","none":"This link has no session in it. Ask for a new one.","note":"The session travels inside the link itself — nothing about it is sent to or stored on this website."},"sv":{"title":"Ett delat pass","lead":"Någon har delat ett pass i CarbPlanner med dig.","open":"Öppna i CarbPlanner","get":"Har du inte CarbPlanner? Hämta den på App Store","none":"Den här länken innehåller inget pass. Be om en ny.","note":"Passet ligger i själva länken — ingenting om det skickas till eller sparas på den här webbplatsen."},"de":{"title":"Eine geteilte Einheit","lead":"Jemand hat eine CarbPlanner-Einheit mit dir geteilt.","open":"In CarbPlanner öffnen","get":"Noch kein CarbPlanner? Im App Store laden","none":"In diesem Link steckt keine Einheit. Bitte um einen neuen.","note":"Die Einheit steckt im Link selbst — nichts davon wird an diese Website gesendet oder dort gespeichert."},"es":{"title":"Una sesión compartida","lead":"Alguien ha compartido contigo una sesión de CarbPlanner.","open":"Abrir en CarbPlanner","get":"¿No tienes CarbPlanner? Consíguela en el App Store","none":"Este enlace no contiene ninguna sesión. Pide uno nuevo.","note":"La sesión viaja dentro del propio enlace: nada se envía ni se guarda en este sitio web."},"fr":{"title":"Une séance partagée","lead":"Quelqu'un a partagé une séance CarbPlanner avec toi.","open":"Ouvrir dans CarbPlanner","get":"Pas encore CarbPlanner ? Télécharge-la sur l'App Store","none":"Ce lien ne contient aucune séance. Demandes-en un nouveau.","note":"La séance voyage dans le lien lui-même — rien n'est envoyé ni conservé sur ce site."},"it":{"title":"Una sessione condivisa","lead":"Qualcuno ha condiviso con te una sessione di CarbPlanner.","open":"Apri in CarbPlanner","get":"Non hai CarbPlanner? Scaricala dall'App Store","none":"Questo link non contiene nessuna sessione. Chiedine uno nuovo.","note":"La sessione viaggia dentro il link stesso: nulla viene inviato o conservato su questo sito."},"nl":{"title":"Een gedeelde sessie","lead":"Iemand heeft een CarbPlanner-sessie met je gedeeld.","open":"Openen in CarbPlanner","get":"Nog geen CarbPlanner? Haal hem in de App Store","none":"In deze link zit geen sessie. Vraag om een nieuwe.","note":"De sessie zit in de link zelf — er wordt niets naar deze website gestuurd of daar bewaard."}};
+  var lang = (navigator.language || "en").slice(0,2).toLowerCase();
+  var t = L[lang] || L.en;
+  document.documentElement.lang = L[lang] ? lang : "en";
+
+  document.getElementById("title").textContent = t.title;
+  document.getElementById("get").textContent = t.get;
+  document.getElementById("note").textContent = t.note;
+
+  // Nyttolasten står i fragmentet. Den läses här och lämnar aldrig sidan:
+  // ingen fetch, ingen loggning, ingen omskrivning av adressfältet.
+  var payload = (location.hash || "").slice(1);
+  var ok = /^[A-Za-z0-9_-]{16,}$/.test(payload);
+
+  document.getElementById("lead").textContent = ok ? t.lead : t.none;
+  if (!ok) return;
+
+  var deep = "carbplanner://pass#" + payload;
+  var btn = document.getElementById("open");
+  btn.href = deep;
+  btn.textContent = t.open;
+  btn.classList.remove("hidden");
+
+  // Försök öppna appen direkt. Safari kräver ofta ett tryck första gången ett
+  // appschema används från en sida, och då står knappen kvar ovanför.
+  // location.replace i stället för assign: annars hamnar ett misslyckat
+  // schemaanrop i historiken och bakåtknappen fastnar på den här sidan.
+  try { location.replace(deep); } catch (e) { /* knappen räcker */ }
+})();
+</script>
+</body>
+</html>
